@@ -21,5 +21,17 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+  // checks if user exists with given email
+  const login =  function(email) {
+    return db.getUserWithEmail(email)
+    .then(user => {
+        return user;
+    });
+  }
+  exports.login = login;
+
+  //
+
   return router;
 };
