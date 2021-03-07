@@ -1,0 +1,28 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-success">
+    <a class="navbar-brand" href="/products">ShoeApp</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/My favourites">My URLs</a>
+       
+      </div>
+    </div>  
+       
+        <% if (user) { %>
+          <form class= "form-inline" action="/logout" method="POST"> 
+          <div style="margin-right: 7px;">Logged in as <%= user.email %> 
+            <button type="submit" class="btn btn-primary">log Out</button> 
+          </form> 
+          </div>
+
+           <% } else { %>
+          <div class = "navbar-nav">
+            <a class="nav-item nav-link" href="/login">login</a>
+          </div>
+          <% } %>
+      
+  </nav>
+</header>
