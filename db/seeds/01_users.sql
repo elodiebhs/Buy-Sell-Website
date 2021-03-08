@@ -1,5 +1,3 @@
-
-
 INSERT INTO users(name, email, phone)
 VALUES
 ('Devin Sanders', 'devinsanders@gmail.com', '250 226 5678'),

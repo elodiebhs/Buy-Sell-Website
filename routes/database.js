@@ -1,4 +1,4 @@
-/// Users
+/// May not be using this!
 //  * Get a single user from the database given their email.
 const getUserWithEmail = function(email) {
 

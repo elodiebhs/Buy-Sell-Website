@@ -13,6 +13,7 @@ module.exports = (db) => {
     db.query(`SELECT * FROM users;`)
       .then(data => {
         const users = data.rows;
+        console.log(users);
         res.json({ users });
       })
       .catch(err => {
@@ -22,16 +23,47 @@ module.exports = (db) => {
       });
   });
 
-  // checks if user exists with given email
-  const login =  function(email) {
-    return db.getUserWithEmail(email)
-    .then(user => {
-        return user;
-    });
-  }
-  exports.login = login;
+  // LOGIN
+  // might not use this
+  // const login =  function(email) {
+  //   return db.getUserWithEmail(email)
+  //   .then(user => {
+  //       return user;
+  //   });
+  // }
+  // exports.login = login;
 
-  //
+  // suggested to use this method for login
+  router.get('/login/:id', (req, res) => {
+    const currentUser = users[req.session.user_id]
+    req.session.user_id = req.params.id;
+    const templateVars = { currentUser: currentUser };
+    console.log("req: ", req)
+    console.log("templateVars: ", templateVars)
+    res.render("index", templateVars);
+    res.redirect('/');
+  });
+
+  // router.post('login', (req, res) => {
+  //   let email = req.body.email;
+  //   console.log("email: ", email);
+  // })
+
+  router.get("/login", (req, res) => {
+    const currentUser = users[req.session.user_id];
+    const templateVars = { currentUser: currentUser };
+    console.log("currentUser: ", currentUser)
+    console.log("templateVars: ", templateVars)
+    res.render("login", templateVars);
+  });
+
+
+  router.post("/", (req, res) => {
+    data = req.body;
+    res.send(data);
+    console.log("data name: ", data.name);
+    return;
+  })
 
   return router;
 };
