@@ -53,6 +53,7 @@ app.use("/api/widgets", widgetsRoutes(db));
 // });
 
 app.get("/", (req, res) => {
+
   db.query(`SELECT * FROM products;`)
   .then(data => {
     const templateVars = { products: data.rows }

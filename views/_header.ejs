@@ -1,0 +1,30 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-success">
+    <a class="navbar-brand" href="/products">ShoeApp</a>
+    <button class="navbar-toggler" type="button" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="/My favourites">My Favourites</a>
+       
+      </div>
+    </div> 
+    
+    <% let user = { email: 'elodiebouthors@hotmail.com' }; %>
+       
+        <% if (user) { %>
+          <form class= "form-inline" action="/logout" method="POST"> 
+          <div style="margin-right: 7px;">Logged in as <%= users.email %> 
+            <button type="submit" class="btn btn-primary">log Out</button> 
+          </form> 
+          </div>
+
+           <% } else { %>
+          <div class = "navbar-nav">
+            <a class="nav-item nav-link" href="/login">login</a>
+          </div>
+          <% } %>
+      
+  </nav>
+</header>
