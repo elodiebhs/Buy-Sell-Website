@@ -9,6 +9,7 @@ body {
   }
 }
 
+/* Index page */ 
 .featured_sneakers{
   border: 1px solid black;
   display: flex;
@@ -31,3 +32,11 @@ body {
   height: 200px;;
 }
 
+/* Product page */ 
+.product-id{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 4rem;
+  padding-bottom: 4rem
+}
