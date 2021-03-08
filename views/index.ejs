@@ -12,6 +12,10 @@
   </head>
 
   <body>
-    <h1>Hello World!</h1>
+    <h1>HomePage</h1>
   </body>
+  <% for (let product of products) { %>
+    <p><%= product.title %></p>
+    <img src="<%= product.thumbnail_photo %>">
+  <% } %>
 </html>
