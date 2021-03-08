@@ -8,3 +8,12 @@ $(() => {
     }
   });;
 });
+
+$(() => {
+  $.ajax({
+    method: "GET",
+    url: "/api/database"
+  }).done(res => {
+    return res;
+  });;
+});

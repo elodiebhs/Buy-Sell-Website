@@ -6,24 +6,27 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
+
         <a class="nav-item nav-link" href="/">My Favourites</a>
        
       </div>
-    </div> 
-    
+    </div>
+
     <% let user = { email: 'elodiebouthors@hotmail.com' }; %>
-       
+
         <% if (user) { %>
-          <form class= "form-inline" action="/logout" method="POST"> 
-            <div style="margin-right: 7px;">Logged in as</div>
-            <button type="submit" class="btn btn-primary">log Out</button> 
-          </form> 
+
+          <form class= "form-inline" action="/api/users" method="POST">
+          <div style="margin-right: 7px;">Logged in as
+            <button type="submit" class="btn btn-primary">log Out</button>
+          </form>
+          </div>
 
            <% } else { %>
           <div class = "navbar-nav">
             <a class="nav-item nav-link" href="/login">login</a>
           </div>
           <% } %>
-      
+
   </nav>
 </header>
