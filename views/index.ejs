@@ -14,4 +14,8 @@
   <body>
     <h1>Hello World!</h1>
   </body>
+  <% for (let product of products) { %>
+    <p><%= product.title %></p>
+    <img src="<%= product.thumbnail_photo %>">
+  <% } %>
 </html>

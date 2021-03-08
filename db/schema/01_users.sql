@@ -17,4 +17,3 @@ CREATE TABLE users (
   is_admin BOOLEAN NOT NULL DEFAULT false
 );
 
---this a test
