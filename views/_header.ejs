@@ -1,15 +1,17 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-success">
     <a class="navbar-brand" href="/products">ShoeApp</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-item nav-link" href="/My favourites">My URLs</a>
+        <a class="nav-item nav-link" href="/My favourites">My Favourites</a>
        
       </div>
-    </div>  
+    </div> 
+    
+    <% let user = { email: 'elodiebouthors@hotmail.com' }; %>
        
         <% if (user) { %>
           <form class= "form-inline" action="/logout" method="POST"> 
