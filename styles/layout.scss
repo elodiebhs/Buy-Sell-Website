@@ -17,12 +17,16 @@ body {
     padding-bottom: 4rem;
   }
 
-  .all_shoes{
+  .all_shoes {
     border: 1px solid black;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding-top: 4rem;
     padding-bottom: 4rem
+  }
+
+  .shoe_image{
+    height: 200px;;
   }
 }
