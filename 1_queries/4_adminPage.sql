@@ -5,4 +5,11 @@ WHERE sold = false
 
 
 --- delete a product
+DELETE FROM products
+WHERE products.id =;
+
 --- edit a product
+
+UPDATE products
+SET -- details the columns we want to update
+WHERE products.id = ---specify product id we want to modify
