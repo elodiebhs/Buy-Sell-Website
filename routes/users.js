@@ -14,14 +14,23 @@ module.exports = (db) => {
       .then(data => {
         const users = data.rows;
         console.log(users);
+        res.render("login", users);
         res.json({ users });
       })
       .catch(err => {
         res
-          .status(500)
-          .json({ error: err.message });
+        .status(500)
+        .json({ error: err.message });
       });
-  });
+    });
+
+    // LOGOUT INCOMPLETE
+    router.post("/", (req, res) => {
+      data = req.body;
+      res.send(data);
+      console.log("data name: ", data.name);
+      return;
+    })
 
   // LOGIN
   // might not use this
@@ -44,26 +53,38 @@ module.exports = (db) => {
     res.redirect('/');
   });
 
-  // router.post('login', (req, res) => {
-  //   let email = req.body.email;
-  //   console.log("email: ", email);
-  // })
 
   router.get("/login", (req, res) => {
-    const currentUser = users[req.session.user_id];
-    const templateVars = { currentUser: currentUser };
-    console.log("currentUser: ", currentUser)
-    console.log("templateVars: ", templateVars)
-    res.render("login", templateVars);
+    console.log(req.body);
+    db.query(`SELECT * FROM users;`)
+    .then(data => {
+      const users = data.rows;
+      console.log(users);
+      res.render("login", users);
+      res.json({ users });
+    })
+    .catch(err => {
+      res
+      .status(500)
+      .json({ error: err.message });
+    });
   });
 
-
-  router.post("/", (req, res) => {
-    data = req.body;
-    res.send(data);
-    console.log("data name: ", data.name);
-    return;
-  })
+  router.post('/login', (req, res) => {
+    console.log(req.body);
+    db.query(`SELECT * FROM users WHERE email = '${req.body.email}';`)
+    .then(data => {
+      const users = data.rows[0];
+      console.log("userstest: ", users);
+      res.render("index", users);
+      res.json({ users });
+    })
+    .catch(err => {
+      res
+      .status(500)
+      .json({ error: err.message });
+    });
+  });
 
   return router;
 };

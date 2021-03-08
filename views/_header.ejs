@@ -14,7 +14,7 @@
     <% let user = { email: 'elodiebouthors@hotmail.com' }; %>
 
         <% if (user) { %>
-          <form class= "form-inline" action="/logout" method="POST">
+          <form class= "form-inline" action="/api/users" method="POST">
           <div style="margin-right: 7px;">Logged in as
             <button type="submit" class="btn btn-primary">log Out</button>
           </form>
