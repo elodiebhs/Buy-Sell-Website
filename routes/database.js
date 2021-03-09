@@ -9,6 +9,7 @@ const getUserWithEmail = function(email) {
   .then(res => res.rows[0])
   .catch(err => console.log(err.stack));
 }
-exports.getUserWithEmail = getUserWithEmail;
+
+module.exports = getUserWithEmail;
 
 
