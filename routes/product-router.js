@@ -28,11 +28,15 @@ module.exports = (db) => {
   
   router.get("/:id", (req, res) => {
     const id = req.params.id;
+    // console.log("id: ", id)
     console.log("req.params", req.params)
     db.query(`SELECT * FROM products WHERE id = $1`, [id])
     .then(data => {
       const currentUser = req.session.user_id;
       const templateVars = { products: data.rows[0], currentUser: currentUser}
+      // console.log("templateVars: ", templateVars)
+      // console.log("products.thumbnail_photo: ", products)
+      console.log("products.id: ", data.rows[0].id)
       console.log("templateVars", templateVars)
       res.render("product_id", templateVars);
     })

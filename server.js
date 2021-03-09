@@ -77,11 +77,16 @@ app.get("/", (req, res) => {
   .then(data => {
     const currentUser = req.session.user_id;
     console.log("the session user: ", currentUser)
-    console.log("user email: ", currentUser.email)
+    console.log("user email: ", currentUser)
     const templateVars = { products: data.rows, currentUser: currentUser }
     console.log("templateVars :", templateVars);
     res.render("index", templateVars);
   })
+  .catch(err => {
+    res
+      .status(500)
+      .json({ error: err.message });
+  });
 });
 
 
