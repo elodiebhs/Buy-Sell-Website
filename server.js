@@ -50,6 +50,7 @@ app.use("/api/users", usersRoutes(db));
 app.use("/products", productRoutes(db));
 app.use("/", searchRoutes(db));
 
+
 // Note: mount other resources here, using the same pattern above
 
 
@@ -78,6 +79,7 @@ app.get("/", (req, res) => {
     res.render("index", templateVars);
   })
 });
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
