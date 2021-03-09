@@ -17,6 +17,29 @@
   <main style="margin: 1em;">
     <h3>Your Favourites</h3>
   
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Photo</th>
+          <th scope="col">Product</th>
+          <th scope="col">See product</th>
+          <th scope="col">Delete from Favourites</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let product in products) { %>
+          <tr>
+            <td><%= products.thumbnail_photo %></td>
+            <td><%= products.title %></td>
+            <td><p style="background-color: white;" type= "button" class="btn btn-primary"><a href="/urls/<%= url %>"> See product</a></p></td>
+
+            <td><form method="POST" action="/urls/<%= url %>/delete"><button type="submit" class="btn btn-outline-danger" name="deleteButton">Delete from list</button></form></td>
+            
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
 
     
   
