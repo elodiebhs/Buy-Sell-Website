@@ -29,14 +29,12 @@ module.exports = (db) => {
     });
 
   router.get("/login", (req, res) => {
-    // console.log(req.body);
-    // const currentUser = req.session.user;
-    // console.log("currentUser: ", currentUser);
 
     db.query(`SELECT * FROM users;`)
     .then(data => {
-      const users = data.rows;
-      res.render("login", users);
+      const currentUser = req.session.user_id;
+      const templateVars = { currentUser: currentUser }
+      res.render("login", templateVars);
     })
     .catch(err => {
       res

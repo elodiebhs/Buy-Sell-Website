@@ -41,6 +41,7 @@ app.use(cookieSession({
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const productRoutes = require("./routes/product-router");
+const favouritesRoutes = require("./routes/favourites-router");
 const searchRoutes = require("./routes/search-router");
 // const widgetsRoutes = require("./routes/widgets");
 
@@ -48,6 +49,7 @@ const searchRoutes = require("./routes/search-router");
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/products", productRoutes(db));
+app.use("/favourites", favouritesRoutes(db));
 app.use("/", searchRoutes(db));
 
 
@@ -70,12 +72,13 @@ app.use("/", searchRoutes(db));
 // });
 
 app.get("/", (req, res) => {
-  const currentUser = req.session.user;
-  console.log("the session user: ", req.session.user)
 
   db.query(`SELECT * FROM products;`)
   .then(data => {
-    const templateVars = { products: data.rows, users: currentUser }
+    const currentUser = req.session.user_id;
+    console.log("the session user: ", currentUser)
+    const templateVars = { products: data.rows, currentUser: currentUser }
+    console.log("templateVars :", templateVars);
     res.render("index", templateVars);
   })
 });
