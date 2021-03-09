@@ -25,9 +25,11 @@ module.exports = (db) => {
 
 
   // Product ID
+  
   router.get("/:id", (req, res) => {
     const id = req.params.id;
     // console.log("id: ", id)
+    console.log("req.params", req.params)
     db.query(`SELECT * FROM products WHERE id = $1`, [id])
     .then(data => {
       const currentUser = req.session.user_id;
@@ -35,12 +37,30 @@ module.exports = (db) => {
       // console.log("templateVars: ", templateVars)
       // console.log("products.thumbnail_photo: ", products)
       console.log("products.id: ", data.rows[0].id)
+      console.log("templateVars", templateVars)
       res.render("product_id", templateVars);
     })
     .catch(err => {
       res
         .status(500)
         .json({ error: err.message });
+    });
+  });
+
+
+  router.post('/:id', (req, res) => {
+    console.log("req.params", req.params);
+    console.log("req", req)
+    console.log("req.body", req.body);
+    db.query(`SELECT * FROM users;`)
+    .then(data => {
+      console.log("data", data)
+      res.redirect("/");
+    })
+    .catch(err => {
+      res
+      .status(500)
+      .json({ error: err.message });
     });
   });
 
