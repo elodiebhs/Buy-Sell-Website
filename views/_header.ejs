@@ -6,6 +6,9 @@
     <button class="navbar-toggler" type="button" >
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <% if (currentUser) { %>
+
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
 
@@ -15,11 +18,10 @@
     </div>
 
       <div>
-        <% if (currentUser) { %>
 
           <form class= "form-inline" action="/api/users/logout" method="POST">
-          <div style="margin-right: 7px;">Logged in as <% currentUser.email %></div>
-            <button type="submit" class="btn btn-primary">log Out</button>
+          <div style="margin-right: 7px;"> Logged in as <%= currentUser.email %></div>
+            <button type="submit" class="btn btn-primary">logout</button>
           </form>
       </div>
 

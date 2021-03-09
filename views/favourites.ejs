@@ -28,13 +28,13 @@
         </tr>
       </thead>
       <tbody>
-        <% for(let product in products) { %>
+        <% for(let product of products) { %>
           <tr>
-            <td><%= products.thumbnail_photo %></td>
-            <td><%= products.title %></td>
-            <td><p style="background-color: white;" type= "button" class="btn btn-primary"><a href="/products/<%= product %>"> See product</a></p></td>
+            <td> <img src= <%= product.thumbnail_photo %> width="200" height="200" > </td>
+            <td><%= product.title %></td>
+            <td><p style="background-color: white;" type= "button" class="btn btn-primary"><a href="/products/<%= product.product_id %>"> See product</a></p></td>
 
-            <td><form method="POST" action="/products/<%= product %>/delete"><button type="submit" class="btn btn-outline-danger" name="deleteButton">Delete from list</button></form></td>
+            <td><form method="POST" action="/products/<%= product.product_id %>/delete"><button type="submit" class="btn btn-outline-danger" name="deleteButton">Delete from list</button></form></td>
 
           </tr>
         <% } %>
