@@ -1,13 +1,25 @@
 // See: https://sass-lang.com/
+/* Color Theme Swatches in Hex */
+$background-texture-1-hex: #011140;
+$background-texture-2-hex:#011126;
+$background-texture-3-hex: #101E26;
+$background-texture-4-hex: #94A1A6;
+$background-texture-5-hex: #F2F2F2;
 
 
 body {
-  background-color: #EEE;
+  background-color: #F2F2F2;
 
   h1 {
     color: #244751;
   }
 }
+
+/* NavBar */ 
+.navbar{
+  background-color: #101E26;
+}
+
 
 /* Index page */ 
 
