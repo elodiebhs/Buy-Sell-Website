@@ -49,3 +49,17 @@ body {
 }
 
 
+/* Product add shoe */ 
+
+.add-shoe-form{
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+
+.custom-select-sm{
+  margin-top: 1rem;
+
+}
