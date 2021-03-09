@@ -45,12 +45,17 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap:wrap;
   padding-top: 4rem;
   padding-bottom: 4rem
 }
 
 .shoe_image{
   height: 200px;;
+}
+
+.all-shoe-title{
+  text-align: center;
 }
 
 /* Product page_id */ 
