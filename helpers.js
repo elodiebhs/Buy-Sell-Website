@@ -31,4 +31,15 @@ function matchingUser(email) {
   }
 }
 
+// Creates new Favourites object list by specific user ID
+function getUserURLS(urlDatabase, id) {
+  let userURLS = {};
+  for (let key in urlDatabase) {
+    if (urlDatabase[key].userID === id) {
+      userURLS[key] = urlDatabase[key]; // adding new urls to urldatabase
+    }
+  }
+  return userURLS;
+};
+
 module.exports = { checkEmailExists, matchingUser };
