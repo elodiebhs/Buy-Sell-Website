@@ -83,11 +83,7 @@ app.get("/", (req, res) => {
   })
 });
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> origin/master
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
