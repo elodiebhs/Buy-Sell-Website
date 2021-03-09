@@ -80,8 +80,8 @@ app.get("/", (req, res) => {
   })
 });
 
-app.get("/admin", (req, res) => {
-  res.render("admin");
+app.get("/product/add", (req, res) => {
+  res.render("product_add");
 });
 
 app.listen(PORT, () => {
