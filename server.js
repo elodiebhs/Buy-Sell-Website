@@ -80,6 +80,9 @@ app.get("/", (req, res) => {
   })
 });
 
+app.get("/product/add", (req, res) => {
+  res.render("product_add");
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
