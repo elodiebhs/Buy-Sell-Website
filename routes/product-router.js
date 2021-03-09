@@ -25,21 +25,21 @@ module.exports = (db) => {
 
 
   //Product ID
-  // router.get("/:id", (req, res) => {
-  //   const id = req.params.id;
-  //   console.log(id)
-  //   db.query(`SELECT * FROM products WHERE id = $1`, [id])
-  //   .then(data => {
-  //     const currentUser = req.session.user_id;
-  //     const templateVars = { products: data.rows[0], currentUser: currentUser}
-  //     res.render("product_id", templateVars);
-  //   })
-  //   .catch(err => {
-  //     res
-  //       .status(500)
-  //       .json({ error: err.message });
-  //   });
-  // });
+  router.get("/:id", (req, res) => {
+    const id = req.params.id;
+    console.log(id)
+    db.query(`SELECT * FROM products WHERE id = $1`, [id])
+    .then(data => {
+      const currentUser = req.session.user_id;
+      const templateVars = { products: data.rows[0], currentUser: currentUser}
+      res.render("product_id", templateVars);
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+  });
 
   return router;
 };
