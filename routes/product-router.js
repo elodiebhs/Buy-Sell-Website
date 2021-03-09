@@ -28,7 +28,7 @@ module.exports = (db) => {
   
   router.get("/:id", (req, res) => {
     const id = req.params.id;
-    // console.log("id: ", id)
+    console.log("id: ", id)
     console.log("req.params", req.params)
     db.query(`SELECT * FROM products WHERE id = $1`, [id])
     .then(data => {

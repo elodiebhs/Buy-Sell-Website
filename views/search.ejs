@@ -11,10 +11,7 @@
   <title>Search</title>
 </head>
 <body>
-
-
   <%- include('_header'); %>
-
   <main style="margin: 1em;">
     <h3>Search for a product</h3>
   
@@ -24,16 +21,17 @@
       <input type="number" placeholder="$" name="minPrice"></input>
     <label>Max</label>
       <input type="number" placeholder="$" name="maxPrice"></input>
-    <!-- <label>Size</label>
+    <label>Size</label>
       <input type="number" placeholder="" name="productSize"></input>
     <label>Name</label>
-      <input type="text" placeholder="Keyword" name="productTitle"> -->
+      <input type="text" placeholder="Keyword" name="productTitle">
     
     <button type="submit">Filter</button>
   </form>
   
   <% for (let product of products) { %>
    <p><%= product.title %></p>
+   <p><%= product.price %></p>
   <% } %>
 
     
