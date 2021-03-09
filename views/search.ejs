@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
+ 
+  <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <title>Search</title>
 </head>
 <body>
@@ -16,12 +18,15 @@
   <form method="GET" action="/search">
     <label>Price</label>
     <label>Min</label>
-    <input type="number" name="minPrice"></input>
+      <input type="number" placeholder="$" name="minPrice"></input>
     <label>Max</label>
-    <input type="number" name="maxPrice"></input>
+      <input type="number" placeholder="$" name="maxPrice"></input>
+    <label>Size</label>
+      <input type="number" placeholder="" name="productSize"></input>
     <label>Brand</label>
-    <input type="text" name="productName">
-    <button type="submit" value="submit">Filter</button>
+      <input type="text" placeholder="brand" name="productBrand">
+    
+    <button type="submit">Filter</button>
   </form>
 
 

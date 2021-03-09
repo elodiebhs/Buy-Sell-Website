@@ -3,18 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Bootstrap CSS -->
+
+  
+  <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
   <title>Add shoe</title>
 </head>
 <body>
 
-  <%- include('_header'); %>
+ 
 
   <main style="margin: 1em;">
     <h3>Add Shoe</h3>
-  
+<div class= "add-shoe-form">
+<form>
+  <div class="form-group">
+    
+    <textarea placeholder="Title" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <textarea placeholder="Description" class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Add a thumbnail photo </label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlFile2">Add a main photo </label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile2">
+  </div>
+
+  <div class="form-group">
+    <textarea placeholder="Brand" class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Size">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Price">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <select class="custom-select custom-select-sm">
+        <option selected>Featured</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+        
+      </select>
+    </div>
+
+    <div class="col">
+      <select class="custom-select custom-select-sm">
+        <option selected>Sold</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+        
+      </select>
+    </div>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+
  <!-- Bootstrap JS -->
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

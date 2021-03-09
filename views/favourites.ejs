@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
+  
+  <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <title>Favourites</title>
 </head>
 <body>
@@ -15,6 +17,29 @@
   <main style="margin: 1em;">
     <h3>Your Favourites</h3>
   
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Photo</th>
+          <th scope="col">Product</th>
+          <th scope="col">See product</th>
+          <th scope="col">Delete from Favourites</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let product in products) { %>
+          <tr>
+            <td><%= products.thumbnail_photo %></td>
+            <td><%= products.title %></td>
+            <td><p style="background-color: white;" type= "button" class="btn btn-primary"><a href="/urls/<%= url %>"> See product</a></p></td>
+
+            <td><form method="POST" action="/urls/<%= url %>/delete"><button type="submit" class="btn btn-outline-danger" name="deleteButton">Delete from list</button></form></td>
+            
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
 
     
   

@@ -7,19 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
 
-        <a class="nav-item nav-link" href="/">My Favourites</a>
+        <a class="nav-item nav-link" href="/products/favourites">My Favourites</a>
 
       </div>
     </div>
 
-
-        <% if (users) { %>
+      <div>
+        <% if (currentUser) { %>
 
           <form class= "form-inline" action="/api/users/logout" method="POST">
           <div style="margin-right: 7px;">Logged in as <% currentUser.email %></div>
             <button type="submit" class="btn btn-primary">log Out</button>
           </form>
-          </div>
+      </div>
 
            <% } else { %>
           <div class = "navbar-nav">
