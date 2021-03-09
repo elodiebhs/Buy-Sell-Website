@@ -9,6 +9,15 @@ body {
   }
 }
 
+/* Index page */ 
+
+.carousel-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 4rem;
+  padding-bottom: 4rem
+}
 .featured_sneakers{
   border: 1px solid black;
   display: flex;
@@ -30,4 +39,13 @@ body {
 .shoe_image{
   height: 200px;;
 }
+
+/* Product page_id */ 
+.product-id{
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 

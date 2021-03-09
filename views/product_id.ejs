@@ -6,15 +6,44 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
+<link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
   <title>Product_id</title>
 </head>
 <body>
 
   <%- include('_header'); %>
 
-  <main style="margin: 1em;">
-    <h3>The product you selected:  <%= products.title %></h3>
-    
+  <main style="margin: 2em;">
+    <h3>The product you selected</h3>
+
+  <div class= "product-id">
+    <div class="card" style="width: 30rem;">
+      <img class="card-img-top" src="<%= products.thumbnail_photo %>" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= products.title %></h5>
+        <p class="card-text"><%= products.description %></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Brand: <%=products.brand%></li>
+        <li class="list-group-item">Size: <%=products.size%></li>
+        <li class="list-group-item">Price: <%=products.price%></li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Add to my Favourites</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Contact Seller</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <button type="button" class="btn btn-secondary">Send Message</button>
+      </div>
+    </form>
+
+  </div>
  <!-- Bootstrap JS -->
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
