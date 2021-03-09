@@ -10,6 +10,19 @@ const getUserWithEmail = function(email) {
   .catch(err => console.log(err.stack));
 }
 
+// const getAllProducts = function(options) {
+//   const queryParams = [];
+
+//   let queryString = `SELECT * FROM products`;
+
+//   if (options.minPrice) {
+//     if(queryParams.length > 0) {
+
+//     }
+//   }
+// }
+
+
 module.exports = getUserWithEmail;
 
 
