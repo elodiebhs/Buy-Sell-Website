@@ -21,8 +21,6 @@
 
     <%- include('_header'); %>
 
-    <h1>HomePage</h1>
-
    <div class="carousel-container">
     <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel" style="width: 40rem;">
       <ol class="carousel-indicators">
@@ -52,16 +50,16 @@
   </div>
 
 
-  <a class="btn btn-primary btn-lg" href="/search" role="button">Search</a>
+  <a class="btn btn-dark btn-lg" href="/search" role="button">Search</a>
 
-
+  <h3>Featured Shoes</h3>
   <div class = "featured_sneakers">
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src=".../100px180/" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="#" class="btn btn-dark">Go somewhere</a>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -69,7 +67,7 @@
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="#" class="btn btn-dark"">Go somewhere</a>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -77,22 +75,22 @@
       <div class="card-body">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="#" class="btn btn-dark">See Feature</a>
       </div>
     </div>
   </div>
 
 
-
+  <h3>All shoes</h3>
   <div class="all_shoes">
-
   <% for (let product of products) { %>
     <div class="card" style="width: 18rem;">
       <img class="card-img-top shoe_image" src="<%= product.thumbnail_photo %>" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title" ><%= product.title %></h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="http://localhost:8080/products/<%=product.id%>" class="btn btn-primary">Go somewhere</a>
+        <p class="card-text"><%= product.description %></p>
+        <p class="card-text"> $<%= product.price%></p>
+        <a href="http://localhost:8080/products/<%=product.id%>" class="btn btn-dark">See Product</a>
       </div>
     </div>
 

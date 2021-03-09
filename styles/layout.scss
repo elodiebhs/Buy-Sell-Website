@@ -13,6 +13,8 @@ body {
   h1 {
     color: #244751;
   }
+
+
 }
 
 /* NavBar */ 
@@ -27,11 +29,11 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding-top: 4rem;
-  padding-bottom: 4rem
+  padding-top: 3rem;
+  padding-bottom: 3rem
 }
 .featured_sneakers{
-  border: 1px solid black;
+  
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -40,7 +42,6 @@ body {
 }
 
 .all_shoes {
-  border: 1px solid black;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
