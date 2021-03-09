@@ -15,6 +15,18 @@
   <main style="margin: 1em;">
     <h3>Search for a product</h3>
   
+  <form method="GET" action="/search">
+    <label>Price</label>
+    <label>Min</label>
+    <input type="number" name="minPrice"></input>
+    <label>Max</label>
+    <input type="number" name="maxPrice"></input>
+    <label>Brand</label>
+    <input type="text" name="productName">
+    <button type="submit" value="submit">Filter</button>
+  </form>
+
+
 
 
     
@@ -24,4 +36,4 @@
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
   
 </body>
-</html>
+</html>   

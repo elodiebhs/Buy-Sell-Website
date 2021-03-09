@@ -1,6 +1,6 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-success">
-    <a class="navbar-brand" href="/products">ShoeApp</a>
+    <a class="navbar-brand" href="/">ShoeApp</a>
     <button class="navbar-toggler" type="button" >
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,23 +8,22 @@
       <div class="navbar-nav">
 
         <a class="nav-item nav-link" href="/">My Favourites</a>
-       
+
       </div>
     </div>
 
-    <% let user = { email: 'elodiebouthors@hotmail.com' }; %>
 
-        <% if (user) { %>
+        <% if (users) { %>
 
-          <form class= "form-inline" action="/api/users" method="POST">
-          <div style="margin-right: 7px;">Logged in as
+          <form class= "form-inline" action="/api/users/logout" method="POST">
+          <div style="margin-right: 7px;">Logged in as <% currentUser.email %></div>
             <button type="submit" class="btn btn-primary">log Out</button>
           </form>
           </div>
 
            <% } else { %>
           <div class = "navbar-nav">
-            <a class="nav-item nav-link" href="/login">login</a>
+            <a class="nav-item nav-link" href="/api/users/login">login</a>
           </div>
           <% } %>
 
