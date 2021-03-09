@@ -20,13 +20,12 @@
 <div class= "add-shoe-form">
 <form>
   <div class="form-group">
-    <label for="exampleFormControlTextarea1" >Title</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    
+    <textarea placeholder="Title" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
   </div>
 
   <div class="form-group">
-    <label for="exampleFormControlTextarea2">Description</label>
-    <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+    <textarea placeholder="Description" class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
   </div>
 
   <div class="form-group">
@@ -40,8 +39,7 @@
   </div>
 
   <div class="form-group">
-    <label for="exampleFormControlTextarea3">Brand</label>
-    <textarea class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
+    <textarea placeholder="Brand" class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
   </div>
 
   <div class="row">
@@ -53,19 +51,26 @@
     </div>
   </div>
 
-  <select class="custom-select custom-select-sm">
-    <option selected>Featured</option>
-    <option value="1">Yes</option>
-    <option value="2">No</option>
-    
-  </select>
+  <div class="row">
+    <div class="col">
+      <select class="custom-select custom-select-sm">
+        <option selected>Featured</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+        
+      </select>
+    </div>
 
-  <select class="custom-select custom-select-sm">
-    <option selected>Sold</option>
-    <option value="1">Yes</option>
-    <option value="2">No</option>
-    
-  </select>
+    <div class="col">
+      <select class="custom-select custom-select-sm">
+        <option selected>Sold</option>
+        <option value="1">Yes</option>
+        <option value="2">No</option>
+        
+      </select>
+    </div>
+  </div>
+
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
