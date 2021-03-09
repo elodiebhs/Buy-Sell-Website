@@ -9,6 +9,8 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
+const cookieSession = require('cookie-session')
+
 
 // PG database client/connection setup
 const { Pool } = require('pg');
@@ -30,17 +32,24 @@ app.use("/styles", sass({
   outputStyle: 'expanded'
 }));
 app.use(express.static("public"));
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2'],
+}));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
 const productRoutes = require("./routes/product-router");
+const searchRoutes = require("./routes/search-router");
 // const widgetsRoutes = require("./routes/widgets");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/products", productRoutes(db));
+app.use("/", searchRoutes(db));
+
 
 // Note: mount other resources here, using the same pattern above
 
@@ -52,10 +61,21 @@ app.use("/products", productRoutes(db));
 //   res.render("index");
 // });
 
+// app.get("/", (req, res) => {
+//   db.query(`SELECT * FROM products;`)
+//   .then(data => {
+//     const templateVars = { products: data.rows }
+//     res.render("index", templateVars);
+//   })
+// });
+
 app.get("/", (req, res) => {
+  const currentUser = req.session.user;
+  console.log("the session user: ", req.session.user)
+
   db.query(`SELECT * FROM products;`)
   .then(data => {
-    const templateVars = { products: data.rows }
+    const templateVars = { products: data.rows, users: currentUser }
     res.render("index", templateVars);
   })
 });

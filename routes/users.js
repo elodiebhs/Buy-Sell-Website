@@ -9,13 +9,16 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  
+  // GET ------------------------------------------------------------------------
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM users;`)
       .then(data => {
         const users = data.rows;
-        console.log(users);
-        res.render("login", users);
+        const currentUser = users[req.session.user_id];
+        console.log("users: ", users);
+        console.log("currentUser: ", currentUser);
+
+        res.render("login", currentUser);
         res.json({ users });
       })
       .catch(err => {
@@ -25,26 +28,23 @@ module.exports = (db) => {
       });
     });
 
+  router.get("/login", (req, res) => {
+    // console.log(req.body);
+    // const currentUser = req.session.user;
+    // console.log("currentUser: ", currentUser);
 
-    // LOGOUT INCOMPLETE
-    router.post("/", (req, res) => {
-      data = req.body;
-      res.send(data);
-      console.log("data name: ", data.name);
-      return;
+    db.query(`SELECT * FROM users;`)
+    .then(data => {
+      const users = data.rows;
+      res.render("login", users);
     })
+    .catch(err => {
+      res
+      .status(500)
+      .json({ error: err.message });
+    });
+  });
 
-  // LOGIN
-  // might not use this
-  // const login =  function(email) {
-  //   return db.getUserWithEmail(email)
-  //   .then(user => {
-  //       return user;
-  //   });
-  // }
-  // exports.login = login;
-
-  // suggested to use this method for login
   router.get('/login/:id', (req, res) => {
     const currentUser = users[req.session.user_id]
     req.session.user_id = req.params.id;
@@ -54,32 +54,18 @@ module.exports = (db) => {
     res.render("index", templateVars);
     res.redirect('/');
   });
+  // END OF GET --------------------------------------------------------------------
 
-
-  router.get("/login", (req, res) => {
-    console.log(req.body);
-    db.query(`SELECT * FROM users;`)
-    .then(data => {
-      const users = data.rows;
-      console.log(users);
-      res.render("login", users);
-      res.json({ users });
-    })
-    .catch(err => {
-      res
-      .status(500)
-      .json({ error: err.message });
-    });
-  });
-
+  // POSTS -------------------------------------------------------------------------
   router.post('/login', (req, res) => {
     console.log(req.body);
     db.query(`SELECT * FROM users WHERE email = '${req.body.email}';`)
     .then(data => {
-      const users = data.rows[0];
-      console.log("userstest: ", users);
-      res.render("index", users);
-      res.json({ users });
+      const user = data.rows[0];
+      console.log("userstest: ", user);
+      req.session.user_id = user
+      console.log("reqsessionuser: ", user)
+      res.redirect("/");
     })
     .catch(err => {
       res
@@ -88,6 +74,12 @@ module.exports = (db) => {
     });
   });
 
+
+  // LOGOUT
+  router.post('/logout', (req, res) => {
+    req.session = null;
+    res.redirect("/");
+  });
 
   return router;
 };
