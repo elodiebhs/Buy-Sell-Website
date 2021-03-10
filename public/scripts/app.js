@@ -14,7 +14,7 @@ $(() => {
 
 function addFav(){
   $.ajax({
-    url: "/favorites/add",
+    url: "/favourites/new",
     data: {"id": articleID},
     success: function(){
          $('a#fav')
@@ -29,7 +29,7 @@ function addFav(){
 
 function removeFav(){
   $.ajax({
-    url: "/favorites/remove",
+    url: "/favourites/remove",
     data: {"id": articleID},
     success: function(){
           $('a#fav')

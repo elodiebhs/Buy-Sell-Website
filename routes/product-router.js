@@ -49,10 +49,10 @@ module.exports = (db) => {
   });
 
   router.post("/contact", (req, res) => {
-    console.log("req.body", req.body)
+    // console.log("req.body", req.body)
     db.query(`SELECT * FROM users;`)
     .then(data => {
-      console.log("data.rows", data.rows)
+      // console.log("data.rows", data.rows)
       res.redirect("/");
     })
     .catch(err => {
