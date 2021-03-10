@@ -25,8 +25,8 @@ module.exports = (db) => {
       console.log("req.body", req.body)
       const currentUser = req.session.user_id;
       
-      //const queryString = `DELETE FROM products WHERE products.id = req.params.id ;`
-      db.query(queryString)
+      const queryString = `DELETE FROM products WHERE products.id = $1;`
+      db.query(queryString, [req.body.product_id])
 
       .then(data => {
         console.log("data.rows", data.rows)
