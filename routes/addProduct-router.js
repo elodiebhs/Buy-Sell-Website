@@ -12,19 +12,22 @@ module.exports = (db) => {
     const thumbnail_photo = req.body.thumbnail_photo;
     const main_photo = req.body.thumbnail_photo;
     const brand = req.body.brand;
-    const size = req.session.size;
-    const price = req.session.price;
+    const size = req.body.size;
+    const price = req.body.price;
     const feature = req.body.feature;
     const sold = req.body.sold;
 
     console.log("req.body", req.body)
 
+    const queryParams = [title, description, thumbnail_photo, main_photo, brand, size, price];
+
     const queryString = `INSERT INTO products (title, description, thumbnail_photo, main_photo, brand, size, price)
     VALUES ($1, $2, $3, $4 ,$5, $6, $7) RETURNING *;`
+    console.log(queryParams)
 
-    db.query(queryString, [title, description, thumbnail_photo, main_photo, brand, size, price])
+    db.query(queryString, queryParams)
       .then(data => {
-        console.log("data rows ", data)
+        console.log("data rows", data)
         res.redirect("/")
       })
       .catch(err => {
