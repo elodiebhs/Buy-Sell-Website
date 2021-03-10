@@ -36,6 +36,7 @@ The following steps are only for _one_ of the group members to perform.
   - It runs through each of the files, in order, and executes them against the database. 
   - Note: you will lose all newly created (test) data each time this is run, since the schema files will tend to `DROP` the tables and recreate them.
 
+
 ## Dependencies
 
 - Node 10.x or above
@@ -43,4 +44,19 @@ The following steps are only for _one_ of the group members to perform.
 - PG 6.x
 
 
--- test change
+### Fonctionnality of the Web Site 
+
+Users Can:
+
+- users can see featured items on a main feed
+- users can filter items by price,
+- users can favourite items to check up on them later
+- users can send email to the admin that is listing the item
+
+Admins can:
+
+- post items, which can be seen by others. Once an item is posted, an alert confirming that the product had been posted is showing up
+- remove items from the site
+- mark items as SOLD!,
+- send an email back to the buyer 
+
