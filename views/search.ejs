@@ -14,25 +14,39 @@
   <%- include('_header'); %>
   <main style="margin: 1em;">
     <h3>Search for a product</h3>
-  
+
+    <div class= "search-form">
   <form method="GET" action="/search">
-    <label>Price</label>
-    <label>Min</label>
-      <input type="number" placeholder="$" name="minPrice"></input>
-    <label>Max</label>
-      <input type="number" placeholder="$" name="maxPrice"></input>
-    <!-- <label>Size</label>
-      <input type="number" placeholder="" name="productSize"></input>
-    <label>Name</label>
-      <input type="text" placeholder="Keyword" name="productTitle"> -->
+      <div class="row">
+        <div class="col">
+          <input type="number" class="form-control" placeholder="$ Min Price" name="minPrice">
+        </div>
+        <div class="col">
+          <input type="number" class="form-control" placeholder="$ Max Price" name="maxPrice">
+        </div>
+        <button class="btn btn-dark" type="submit">Filter</button>
+      </div>
     
-    <button type="submit">Filter</button>
+    
   </form>
-  
+  </div>
+
+
+  <div class="shoe-filter">
   <% for (let product of products) { %>
-   <p><%= product.title %></p>
-   <p><%= product.price %></p>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top shoe_image" src="<%= product.thumbnail_photo %>" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title" ><%= product.title %></h5>
+        <p class="card-text"><%= product.description %></p>
+        <p class="card-text"> $<%= product.price%></p>
+        <a href="http://localhost:8080/products/<%=product.id%>" class="btn btn-dark">See Product</a>
+      </div>
+    </div>
+
   <% } %>
+</div>
+ 
 
     
  <!-- Bootstrap JS -->

@@ -33,7 +33,6 @@ body {
   padding-bottom: 3rem
 }
 .featured_sneakers{
-  
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -60,7 +59,6 @@ body {
 
 /* Product page_id */ 
 .product-id{
-  border: 1px solid black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -70,14 +68,29 @@ body {
 /* Product add shoe */ 
 
 .add-shoe-form{
-  border: 1px solid red;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  
 }
 
 .custom-select-sm{
   margin-top: 1rem;
 
+}
+
+/*search page*/
+
+.search-form{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.shoe-filter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap:wrap;
+  padding-top: 4rem;
+  padding-bottom: 4rem
 }
