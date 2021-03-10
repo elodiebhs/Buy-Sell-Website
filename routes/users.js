@@ -60,9 +60,9 @@ module.exports = (db) => {
     db.query(`SELECT * FROM users WHERE email = '${req.body.email}';`)
     .then(data => {
       const user = data.rows[0];
-      console.log("userstest: ", user);
+      // console.log("userstest: ", user);
       req.session.user_id = user
-      console.log("reqsessionuser: ", user)
+      // console.log("reqsessionuser: ", user)
       res.redirect("/");
     })
     .catch(err => {
