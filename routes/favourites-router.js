@@ -27,12 +27,7 @@ module.exports = (db) => {
         }
       }
       return userFavourites;
-      // return userFavourites;
-      // console.log("userFavourites: ", userFavourites)
-      // return userFavourites;
-      // };
     })
-    console.log(req.session.user_id.id)
     db.query(`SELECT * FROM products JOIN favourites ON product_id = products.id WHERE favourites.user_id = ${req.session.user_id.id};`)
     .then(data => {
       console.log("userFavourites: ", data.rows)
@@ -41,8 +36,6 @@ module.exports = (db) => {
       console.log("THIRD currentUser: ", currentUser)
       console.log("last favorites: ", userFavourites)
       console.log("last favorites2: ", userFavourites.thumbnail_photo)
-
-
       const templateVars = { products: userFavourites, currentUser: currentUser }
       res.render("favourites", templateVars);
     })
@@ -61,6 +54,25 @@ module.exports = (db) => {
     //console.log("currentUser.id", currentUser.id)
     // db.query(`INSERT INTO favourites (currentUser.id, product_id) VALUES ()`)
     db.query(`SELECT * FROM products;`)
+    .then(data => {
+      console.log("data.rows", data.rows)
+      res.redirect("/");
+    })
+    .catch(err => {
+      res
+      .status(500)
+      .json({ error: err.message });
+    });
+  });
+
+
+  router.post("/new", (req, res) => {
+    const currentUser = req.session.user_id;
+    console.log("req.params.id: ", req.params.id);
+    console.log("currentuser", currentUser)
+    console.log("hello")
+    console.log("document.cookie: ", window.location)
+    db.query(`SELECT * FROM users;`)
     .then(data => {
       console.log("data.rows", data.rows)
       res.redirect("/");

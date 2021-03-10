@@ -31,17 +31,26 @@
       </ul>
     </div>
 
+
+    <script>
+      function getURL() {
+          return (window.location.href);
+      }
+      </script>
+
+
+    <div class="card-body">
+        <form class="form-inline" action="/favourites/new" method="POST">
+          <div style="margin-right: 7px;">Logged in as <%= currentUser.email %></div>
+            <button type="submit" class="btn btn-primary" onclick="getURL();">Add to my favourites </button> </form>
+          </div>
+
+
     <div class="card-body">
       <form class= "form-inline" action="/favourites/new" method="POST">
         <button type="submit" class="btn btn-primary">Add to favourites</button>
       </form>
     </div>
-
-    <!-- <div class="card-body"> 
-      <form class="form-inline" action="/logout" method="POST">   
-        <button type="submit" class="btn btn-primary">Log Out</button> 
-      </form>
-    </div> -->
     
 
     <div class="form-group">
@@ -51,6 +60,7 @@
         <button type="submit" class="btn btn-primary" ><a href="mailto:someone@example.com">Send email</a></button>
       </form>
     </div>
+
 
 
 
