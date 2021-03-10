@@ -18,42 +18,42 @@
   <main style="margin: 1em;">
     <h3>Add Shoe</h3>
 <div class= "add-shoe-form">
-<form>
+<!-- Form Starts -->
+<form method="POST" action="/addproduct">
   <div class="form-group">
-    
-    <textarea placeholder="Title" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <input name="title" placeholder="Shoe Name" class="form-control" rows="3"></input>
   </div>
 
   <div class="form-group">
-    <textarea placeholder="Description" class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+    <textarea name="description" placeholder="Description" class="form-control" rows="3"></textarea>
   </div>
 
   <div class="form-group">
-    <label for="exampleFormControlFile1">Add a thumbnail photo </label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    <label>Add a thumbnail photo </label>
+    <input name="thumbnail_photo" type="file" class="form-control-file">
   </div>
 
   <div class="form-group">
-    <label for="exampleFormControlFile2">Add a main photo </label>
-    <input type="file" class="form-control-file" id="exampleFormControlFile2">
+    <label>Add a main photo </label>
+    <input name="main_photo" type="file" class="form-control-file">
   </div>
 
   <div class="form-group">
-    <textarea placeholder="Brand" class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
+    <input name="brand" placeholder="Brand" class="form-control"></input>
   </div>
 
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="Size">
+      <input name="size" type="number" class="form-control" placeholder="Size">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Price">
+      <input name="price" type="number" class="form-control" placeholder="Price">
     </div>
   </div>
 
   <div class="row">
     <div class="col">
-      <select class="custom-select custom-select-sm">
+      <select name="feature">
         <option selected>Featured</option>
         <option value="1">Yes</option>
         <option value="2">No</option>
@@ -62,7 +62,7 @@
     </div>
 
     <div class="col">
-      <select class="custom-select custom-select-sm">
+      <select name="sold">
         <option selected>Sold</option>
         <option value="1">Yes</option>
         <option value="2">No</option>
