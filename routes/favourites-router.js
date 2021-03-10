@@ -30,12 +30,12 @@ module.exports = (db) => {
     })
     db.query(`SELECT * FROM products JOIN favourites ON product_id = products.id WHERE favourites.user_id = ${req.session.user_id.id};`)
     .then(data => {
-      console.log("userFavourites: ", data.rows)
+      // console.log("userFavourites: ", data.rows)
       const userFavourites = data.rows;
       const currentUser = req.session.user_id;
-      console.log("THIRD currentUser: ", currentUser)
-      console.log("last favorites: ", userFavourites)
-      console.log("last favorites2: ", userFavourites.thumbnail_photo)
+      // console.log("THIRD currentUser: ", currentUser)
+      // console.log("last favorites: ", userFavourites)
+      // console.log("last favorites2: ", userFavourites.thumbnail_photo)
       const templateVars = { products: userFavourites, currentUser: currentUser }
       res.render("favourites", templateVars);
     })
@@ -48,7 +48,7 @@ module.exports = (db) => {
 
   router.post("/new", (req, res) => {
     const currentUser = req.session.user_id;
-    console.log("req.session", req.session)
+    // console.log("req.session", req.session)
     // console.log("currentuser", currentUser)
     // console.log("hello")
     //console.log("currentUser.id", currentUser.id)
@@ -71,7 +71,7 @@ module.exports = (db) => {
     console.log("req.params.id: ", req.params.id);
     console.log("currentuser", currentUser)
     console.log("hello")
-    console.log("document.cookie: ", window.location)
+    console.log("document.cookie: ", this.req)
     db.query(`SELECT * FROM users;`)
     .then(data => {
       console.log("data.rows", data.rows)
