@@ -16,7 +16,13 @@
 
   <main style="margin: 2em;">
     <h3>The product you selected</h3>
+    <% if (message) { %>
+      <div class="alert alert-success" role="alert">
+        <%= message %>
+      </div>
 
+    <% }%>
+  
   <div class= "product-id">
     <div class="card" style="width: 30rem;">
       <img class="card-img-top" src="<%= products.thumbnail_photo %>" alt="Card image cap">
@@ -32,11 +38,9 @@
     </div>
 
 
-
-
     <div class="card-body">
         <form class="form-inline" action="/favourites/new" method="POST">
-          <div style="margin-right: 7px;">Logged in as <%= currentUser.email %></div>
+          <div style="margin-right: 7px;">Logged in as <%= currentUser.email %></div> 
             <button type="submit" id="add-favourite">Add to my favourites </button> </form>
           </div>
 

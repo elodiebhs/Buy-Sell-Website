@@ -34,7 +34,7 @@ module.exports = (db) => {
     db.query(`SELECT * FROM products WHERE id = $1`, [id])
     .then(data => {
       const currentUser = req.session.user_id;
-      const templateVars = { products: data.rows[0], currentUser: currentUser}
+      const templateVars = { products: data.rows[0], currentUser: currentUser, message: ""}
       // console.log("templateVars: ", templateVars)
       // console.log("products.thumbnail_photo: ", products)
       // console.log("products.id: ", data.rows[0].id)
