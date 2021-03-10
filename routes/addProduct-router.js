@@ -15,7 +15,6 @@ module.exports = (db) => {
     const size = req.body.size;
     const price = req.body.price;
     const feature = req.body.feature;
-    const sold = req.body.sold;
 
     console.log("req.body", req.body)
 

@@ -11,18 +11,18 @@
 
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-
         <a class="nav-item nav-link" href="/favourites">My Favourites</a>
-
       </div>
     </div>
+
+    <a class="nav-item nav-link" href="/addproduct">Add Product</a>
 
       <div>
 
           <form class= "form-inline" action="/api/users/logout" method="POST">
           <div style="margin-right: 7px;"> Logged in as <%= currentUser.email %></div>
             <button type="submit" class="btn btn-primary">logout</button>
-          </form>
+                 </form>
       </div>
 
            <% } else { %>
