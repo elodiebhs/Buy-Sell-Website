@@ -7,8 +7,9 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM products;`)
       .then(data => {
+        const currentUser = req.session.user_id;
         const theProducts = data.rows;
-        const templateVars = { products: theProducts};
+        const templateVars = { products: theProducts, currentUser: currentUser};
         console.log("products", templateVars)
         res.render("admin", templateVars);
       })
@@ -22,7 +23,9 @@ module.exports = (db) => {
 
     router.post("/delete", (req, res) => {
       console.log("req.body", req.body)
-      db.query(`DELETE FROM products WHERE////////;`)
+      
+      //const queryString = `DELETE FROM products WHERE////////;`
+      db.query(queryString)
       .then(data => {
         console.log("data.rows", data.rows)
         res.redirect("/");
