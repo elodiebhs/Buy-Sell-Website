@@ -19,11 +19,12 @@ module.exports = (db) => {
 
     console.log("req.body", req.body)
 
-    const queryString = `INSERT INTO products(title, description, thumbnail_photo, main_photo, brand, size, price)
+    const queryString = `INSERT INTO products (title, description, thumbnail_photo, main_photo, brand, size, price)
     VALUES ($1, $2, $3, $4 ,$5, $6, $7) RETURNING *;`
 
     db.query(queryString, [title, description, thumbnail_photo, main_photo, brand, size, price])
       .then(data => {
+        console.log("data rows ", data)
         res.redirect("/")
       })
       .catch(err => {
