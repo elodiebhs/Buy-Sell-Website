@@ -17,13 +17,13 @@ body {
 
 }
 
-/* NavBar */ 
+/* NavBar */
 .navbar{
   background-color: #101E26;
 }
 
 
-/* Index page */ 
+/* Index page */
 
 .carousel-container{
   display: flex;
@@ -57,7 +57,7 @@ body {
   text-align: center;
 }
 
-/* Product page_id */ 
+/* Product page_id */
 .product-id{
   display: flex;
   flex-direction: row;
@@ -65,7 +65,7 @@ body {
 }
 
 
-/* Product add shoe */ 
+/* Product add shoe */
 
 .add-shoe-form{
   display: flex;
@@ -94,3 +94,14 @@ body {
   padding-top: 4rem;
   padding-bottom: 4rem
 }
+
+a#fav{
+  background: url('../images/addFavourite.png');
+  display: block;
+  width: 48px;
+  height: 48px;
+ }
+
+ a#fav.active{
+  background: url('../images/addFavourite-hover.png');
+ }

@@ -8,6 +8,9 @@
 
 <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
+<!-- Scripts -->
+<script src="/scripts/app.js"></script>
+
   <title>Product_id</title>
 </head>
 <body>
@@ -31,25 +34,18 @@
       </ul>
     </div>
 
-
-
-
-    <div class="card-body">
-        <form class="form-inline" action="/favourites/new" method="POST">
-          <div style="margin-right: 7px;">Logged in as <%= currentUser.email %></div>
-            <button type="submit" id="add-favourite">Add to my favourites </button> </form>
-          </div>
-
-
+    <!-- Adding item to favourites -->
     <div class="card-body">
       <form class= "form-inline" action="/favourites/new" method="POST">
-        <button type="submit" class="btn btn-primary">    <a href="#" id="fav" title="[+] Add as favorite">&nbsp;</a>Add to favourites</button>
+        <input type="hidden" name="prodID" value="<%= products.id %>" />
+        <button type="submit" class="btn btn-primary"> Add to favourites</button>
       </form>
     </div>
 
+    <a href="#" id="fav" title="[+] Add as favorite">&nbsp;</a>
 
 
-
+<!-- Contact Form -->
     <div class="form-group">
       <form class="form-inline" action="/products/contact" method="POST">
         <label for="contactForm">Contact the seller:</label>
