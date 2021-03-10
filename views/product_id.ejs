@@ -29,11 +29,20 @@
         <li class="list-group-item">Size: <%=products.size%></li>
         <li class="list-group-item">Price: <%=products.price%></li>
       </ul>
-
-      <div class="card-body">
-        <a href="#" class="card-link" action="/favourites/add/<%= products.id %>" method="POST">Add to my Favourites</a>
-      </div>
     </div>
+
+    <script>
+      function getURL() {
+          return (window.location.href);
+      }
+      </script>
+
+
+    <div class="card-body">
+        <form class="form-inline" action="/favourites/new" method="POST">
+          <div style="margin-right: 7px;">Logged in as <%= currentUser.email %></div>
+            <button type="submit" class="btn btn-primary" onclick="getURL();">Add to my favourites </button> </form>
+          </div>
 
 
 
