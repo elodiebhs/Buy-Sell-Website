@@ -29,19 +29,13 @@
         <li class="list-group-item">Size: <%=products.size%></li>
         <li class="list-group-item">Price: <%=products.price%></li>
       </ul>
+
       <div class="card-body">
-        <a href="#" class="card-link">Add to my Favourites</a>
-        <a href="#" class="card-link">Another link</a>
+        <a href="#" class="card-link" action="/favourites/add/<%= products.id %>" method="POST">Add to my Favourites</a>
       </div>
     </div>
 
-    <div class="form-group">
-      <form class="form-inline" action="/products/contact" method="POST">
-        <label for="contactForm">Contact the seller:</label>
-        <textarea class="form-control" type="text" name="contact" placeholder="Message the seller" style="width: 300px; margin: 1em"></textarea>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
+
 
 
 
