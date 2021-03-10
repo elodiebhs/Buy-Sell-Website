@@ -48,15 +48,20 @@ module.exports = (db) => {
 
   router.post("/new", (req, res) => {
     const currentUser = req.session.user_id;
+    const currentProduct = req.body.prodID;
     // console.log("req.session", req.session)
     // console.log("currentuser", currentUser)
     // console.log("hello")
-    //console.log("currentUser.id", currentUser.id)
-    // db.query(`INSERT INTO favourites (currentUser.id, product_id) VALUES ()`)
-    db.query(`SELECT * FROM products;`)
+    console.log("currentUser.id", currentUser.id)
+    console.log("req.body.prodID: ", currentProduct);
+    // db.query(`SELECT * FROM products;`)
+    db.query(`INSERT INTO favourites (user_id, product_id)
+    VALUES (${currentUser.id}, ${currentProduct})
+    RETURNING *;`)
     .then(data => {
-      console.log("data.rows", data.rows)
-      res.redirect("/");
+      // alert("Successfully added item to favourites!");
+      // console.log("data.rows", data.rows)
+      res.redirect("/favourites")
     })
     .catch(err => {
       res

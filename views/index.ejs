@@ -73,6 +73,8 @@
   <h3>All shoes</h3>
   <div class="all_shoes">
   <% for (let product of products) { %>
+    
+    <% if (!product.sold) { %>
     <div class="card" style="width: 18rem;">
       <img class="card-img-top shoe_image" src="<%= product.thumbnail_photo %>" alt="Card image cap">
       <div class="card-body">
@@ -82,6 +84,21 @@
         <a href="http://localhost:8080/products/<%=product.id%>" class="btn btn-dark">See Product</a>
       </div>
     </div>
+    <% } %>
+
+    <% if (product.sold) { %>
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top shoe_image" src="<%= product.thumbnail_photo %>" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" ><%= product.title %></h5>
+          <p class="card-text"><%= product.description %></p>
+          <p class="card-text"> $<%= product.price%></p>
+          <a href="http://localhost:8080/products/<%=product.id%>" class="btn btn-dark">See Product</a>
+        </div>
+
+        <p>SOLD</p>
+      </div>
+    <% } %>
 
   <% } %>
 </div>
