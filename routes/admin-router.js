@@ -23,8 +23,9 @@ module.exports = (db) => {
 
     router.post("/delete", (req, res) => {
       console.log("req.body", req.body)
+      const currentUser = req.session.user_id;
       
-      //const queryString = `DELETE FROM products WHERE////////;`
+      //const queryString = `DELETE FROM products WHERE products.id = req.params.id ;`
       db.query(queryString)
       .then(data => {
         console.log("data.rows", data.rows)

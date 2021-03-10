@@ -34,7 +34,7 @@
             <td><%= product.title %></td>
 
 
-            <td><p method="POST" action="/admin/<%= product.product_id %>/delete" style="background-color: red;" type= "button" class="btn btn-primary"><a> delete</a></p></td>
+            <td><button method="POST" action="/admin/<%= product.product_id %>/delete" style="background-color: red;" type= "submit" class="btn btn-primary"><a> delete</a></button></td>
 
           </tr>
         <% } %>
