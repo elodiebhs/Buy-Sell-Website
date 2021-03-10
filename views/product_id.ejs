@@ -31,6 +31,7 @@
       </ul>
     </div>
 
+
     <script>
       function getURL() {
           return (window.location.href);
@@ -44,6 +45,21 @@
             <button type="submit" class="btn btn-primary" onclick="getURL();">Add to my favourites </button> </form>
           </div>
 
+
+    <div class="card-body">
+      <form class= "form-inline" action="/favourites/new" method="POST">
+        <button type="submit" class="btn btn-primary">Add to favourites</button>
+      </form>
+    </div>
+    
+
+    <div class="form-group">
+      <form class="form-inline" action="/products/contact" method="POST">
+        <label for="contactForm">Contact the seller:</label>
+        <textarea class="form-control" type="text" name="contact" placeholder="Message the seller" style="width: 300px; margin: 1em"></textarea>
+        <button type="submit" class="btn btn-primary" ><a href="mailto:someone@example.com">Send email</a></button>
+      </form>
+    </div>
 
 
 

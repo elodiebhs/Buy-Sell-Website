@@ -46,6 +46,24 @@ module.exports = (db) => {
     });
   });
 
+  router.post("/new", (req, res) => {
+    const currentUser = req.session.user_id;
+    console.log("req.session", req.session)
+    // console.log("currentuser", currentUser)
+    // console.log("hello")
+    //console.log("currentUser.id", currentUser.id)
+    // db.query(`INSERT INTO favourites (currentUser.id, product_id) VALUES ()`)
+    db.query(`SELECT * FROM products;`)
+    .then(data => {
+      console.log("data.rows", data.rows)
+      res.redirect("/");
+    })
+    .catch(err => {
+      res
+      .status(500)
+      .json({ error: err.message });
+    });
+  });
 
 
   router.post("/new", (req, res) => {

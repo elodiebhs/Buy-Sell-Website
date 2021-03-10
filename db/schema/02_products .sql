@@ -24,4 +24,3 @@ CREATE TABLE products (
   sold BOOLEAN NOT NULL DEFAULT false
 );
 
-
