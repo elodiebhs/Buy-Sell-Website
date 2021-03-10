@@ -38,6 +38,24 @@ module.exports = (db) => {
         .json({ error: err.message });
       });
     });
+
+    router.post("/sold", (req, res) => {
+      console.log("req.body", req.body)
+      const currentUser = req.session.user_id;
+      
+      const queryString = `UPDATE products SET sold = true WHERE products.id = $1;`
+      db.query(queryString, [req.body.product_id])
+
+      .then(data => {
+        console.log("data.rows", data.rows)
+        res.redirect("/admin");
+      })
+      .catch(err => {
+        res
+        .status(500)
+        .json({ error: err.message });
+      });
+    });
   
     return router;
   };
