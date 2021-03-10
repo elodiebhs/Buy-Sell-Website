@@ -44,6 +44,7 @@ const productRoutes = require("./routes/product-router");
 const favouritesRoutes = require("./routes/favourites-router");
 const searchRoutes = require("./routes/search-router");
 const addProductRoutes = require("./routes/addProduct-router");
+const adminRoutes = require("./routes/admin-router");
 // const widgetsRoutes = require("./routes/widgets");
 
 // Mount all resource routes
@@ -53,6 +54,7 @@ app.use("/products", productRoutes(db));
 app.use("/favourites", favouritesRoutes(db));
 app.use("/", searchRoutes(db));
 app.use("/", addProductRoutes(db));
+app.use("/admin", adminRoutes(db));
 
 
 // Note: mount other resources here, using the same pattern above

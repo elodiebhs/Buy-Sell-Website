@@ -13,38 +13,31 @@
   <title>Admin</title>
 </head>
 <body>
-  <%- include('_header'); %>
 
   <main style="margin: 1em;">
-    <h3>Admin Page</h3>
-  
-    <div class="container">
-      <h2>Here the admin can edit or delete shoe</h2>
-                  
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Photo</th>
-            <th scope="col">product</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% for(let product in products) { %>
-            <tr>
-              <td><%= products.thumbnail_photo %></td>
-              <td><%= products.title %></td>
-              <td><p style="background-color: white;" type= "button" class="btn btn-primary"><a href="/urls/<%= url %>"> Edit</a></p></td>
-  
-              <td><form method="POST" action="/urls/<%= url %>/delete"><button type="submit" class="btn btn-outline-danger" name="deleteButton">Delete</button></form></td>
-              
-            </tr>
-          <% } %>
-        </tbody>
-      </table>
-    </div>
+    <h3>Admin</h3>
 
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Photo</th>
+          <th scope="col">Product</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let product of products) { %>
+          <tr>
+            <td> <img src= <%= product.thumbnail_photo %> width="200" height="200" > </td>
+            <td><%= product.title %></td>
+
+
+            <td><p method="POST" action="/admin/<%= product.product_id %>/delete" style="background-color: red;" type= "button" class="btn btn-primary"><a> delete</a></p></td>
+
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
     
  <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
