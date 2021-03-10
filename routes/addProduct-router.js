@@ -27,12 +27,15 @@ module.exports = (db) => {
     db.query(queryString, queryParams)
       .then(data => {
         console.log("data rows", data)
-        res.redirect("/")
+        const currentUser = req.session.user_id;
+        const templateVars = { products: data.rows[0], currentUser: currentUser, message: "Your product has been added"}
+        res.render("product_id", templateVars);
       })
       .catch(err => {
         res.status(500)
         res.json({error: err.message});
       });
+      
   })
 
 return router;
