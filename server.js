@@ -76,10 +76,10 @@ app.get("/", (req, res) => {
   db.query(`SELECT * FROM products;`)
   .then(data => {
     const currentUser = req.session.user_id;
-    console.log("the session user: ", currentUser)
-    console.log("user email: ", currentUser)
+    // console.log("the session user: ", currentUser)
+    // console.log("user email: ", currentUser)
     const templateVars = { products: data.rows, currentUser: currentUser }
-    console.log("templateVars :", templateVars);
+    // console.log("templateVars :", templateVars);
     res.render("index", templateVars);
   })
   .catch(err => {

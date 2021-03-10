@@ -35,13 +35,15 @@
       </div>
     </div>
 
-    <form class="form-inline" action="/products/<%= products.id %>" method="POST">
-      <div class="form-group">
-        <label for="exampleFormControlTextarea1">Contact Seller</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        <button type="button" class="btn btn-secondary">Send Message</button>
-      </div>
-    </form>
+    <div class="form-group">
+      <form class="form-inline" action="/products/contact" method="POST">
+        <label for="contactForm">Contact the seller:</label>
+        <textarea class="form-control" type="text" name="contact" placeholder="Message the seller" style="width: 300px; margin: 1em"></textarea>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+
 
   </div>
  <!-- Bootstrap JS -->
