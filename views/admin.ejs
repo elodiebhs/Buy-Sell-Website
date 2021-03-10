@@ -34,12 +34,20 @@
             <td><%= product.title %></td>
 
 
-            <td><button method="POST" action="/admin/<%= product.product_id %>/delete" style="background-color: red;" type= "submit" class="btn btn-primary"><a> delete</a></button></td>
+            <td>
+              <form class= "form-inline" action="/admin/delete" method="POST">
+                <button type="submit" class="btn btn-primary">Delete</button>
+              </form>
+            </td>
+
 
           </tr>
         <% } %>
       </tbody>
     </table>
+
+    
+    
     
  <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
