@@ -65,7 +65,7 @@ module.exports = (db) => {
       // console.log("reqsessionuser: ", user)
       res.redirect("/");
       } else {
-        res.json({result:"user not found"})
+        res.json({result:"Sorry, you are not a user"})
       }
     })
     .catch(err => {

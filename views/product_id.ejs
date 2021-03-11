@@ -18,7 +18,7 @@
   <%- include('_header'); %>
 
   <main style="margin: 2em;">
-    <h3>The product you selected</h3>
+    <h3 class="title-product-id">The product you selected</h3>
 
 
     <!-- Message if item is added -->
@@ -46,10 +46,11 @@
     </div>
 
     <!-- Adding item to favourites -->
-    <div class="card-body">
+  <div class= buttons-product-id>
+    <div class="add-to-favourites">
       <form class= "form-inline" action="/favourites/new" method="POST">
         <input type="hidden" name="prodID" value="<%= products.id %>" />
-        <button type="submit" class="btn btn-primary"> Add to favourites</button>
+        <button type="submit" class="btn btn-outline-dark"> Add to favourites</button>
       </form>
     </div>
 
@@ -59,14 +60,9 @@
 <!-- Contact Form -->
     <div class="form-group">
       <form class="form-inline" action="/products/contact" method="POST">
-        <label for="contactForm">Contact the seller:</label>
-        <textarea class="form-control" type="text" name="contact" placeholder="Message the seller" style="width: 300px; margin: 1em"></textarea>
-        <button type="submit" class="btn btn-primary" ><a href="mailto:someone@example.com">Send email</a></button>
+        <button type="submit" class="btn btn-outline-dark" ><a href="mailto:someone@example.com">Contact Seller</a></button>
       </form>
     </div>
-
-
-
 
   </div>
  <!-- Bootstrap JS -->
