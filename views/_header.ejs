@@ -9,13 +9,13 @@
     
     <a class="nav-item nav-link" href="/favourites">My Favourites</a>
 
+    <!-- if user is logged in -->
     <% if (currentUser) { %>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link" href="/addproduct">Add Product</a>
+          <a class="nav-item nav-link" href="/favourites">My Favourites</a>
         </div>
       </div>
-      
         <div>
             <form class= "form-inline login-as" action="/api/users/logout" method="POST">
             <div style="margin-right: 7px;"> Logged in as <%= currentUser.email %></div>
@@ -23,11 +23,22 @@
             </form>
         </div>
 
-        <% } else { %>
-          <div class = "navbar-nav">
-            <a  class="nav-item nav-link" href="/api/users/login">login</a>
-          </div>
-        <% } %>
+    <!-- if user is an admin -->
+    <% } if (currentUser && admin) { %>
+      <%  if (currentUser.id === admin.id) { %>
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/admin">Admin</a>
+          <a class="nav-item nav-link" href="/addproduct">Add Product</a>
+        </div>
+      <% } %>
+
+    <!-- if user is logged out -->
+    <% } else { %>
+        <div class = "navbar-nav">
+          <a  class="nav-item nav-link" href="/api/users/login">login</a>
+        </div>
+    <% } %>
+
 
   </nav>
 </header>

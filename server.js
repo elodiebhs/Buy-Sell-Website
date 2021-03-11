@@ -68,11 +68,11 @@ app.use("/admin", adminRoutes(db));
 // });
 
 app.get("/", (req, res) => {
-
-  db.query(`SELECT * FROM products;`)
+  db.query(`SELECT * FROM users WHERE is_admin = true; SELECT * FROM products;`)
   .then(data => {
-    const currentUser = req.session.user_id
-    const templateVars = { products: data.rows, currentUser: currentUser }
+    const currentUser = req.session.user_id;
+    const adminData = data.rows[0];
+    const templateVars = { products: data.rows, currentUser: currentUser, admin: adminData }
     res.render("index", templateVars);
   })
   .catch(err => {
