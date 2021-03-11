@@ -7,10 +7,6 @@ $(() => {
       $("<div>").text(user.name).appendTo($("body"));
     }
   });;
-
-  $('#fav').click(() =>{
-    console.log("is this working AAAAAAAAAAAAA")
-  });
 });
 
 // Incomplete Favourites
