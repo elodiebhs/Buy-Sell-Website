@@ -5,11 +5,12 @@ const router  = express.Router();
 module.exports = (db) => {
 //user admin see all products
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM products;`)
+    db.query(`SELECT * FROM users WHERE is_admin = true; SELECT * FROM products;`)
       .then(data => {
         const currentUser = req.session.user_id;
-        const theProducts = data.rows;
-        const templateVars = { products: theProducts, currentUser: currentUser};
+        const adminData = data.rows[0];
+        const theProducts = data.rows.slice(1);
+        const templateVars = { products: theProducts, currentUser: currentUser, admin: adminData};
         // console.log("products", templateVars)
         res.render("admin", templateVars);
       })

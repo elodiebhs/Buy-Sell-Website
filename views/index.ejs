@@ -22,7 +22,7 @@
     <%- include('_header'); %>
 
    <div class="carousel-container">
-    <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel" style="width: 40rem;">
+    <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -96,7 +96,7 @@
             <p class="card-text"> $<%= product.price%></p>
             <a href="http://localhost:8080/products/<%=product.id%>" class="btn btn-dark">See Product</a>
           </div>
-
+  
           <p>SOLD</p>
         </div>
       <% } %>

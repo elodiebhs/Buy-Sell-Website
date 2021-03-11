@@ -72,7 +72,9 @@ app.get("/", (req, res) => {
   .then(data => {
     const currentUser = req.session.user_id;
     const adminData = data.rows[0];
-    const templateVars = { products: data.rows, currentUser: currentUser, admin: adminData }
+    const theProducts = data.rows.slice(1);
+    const templateVars = { products: theProducts, currentUser: currentUser, admin: adminData }
+    console.log("data rows", data.rows)
     res.render("index", templateVars);
   })
   .catch(err => {
