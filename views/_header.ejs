@@ -13,6 +13,17 @@
         <div class="navbar-nav">
           <a class="nav-item nav-link" href="/favourites">My Favourites</a>
         </div>
+      
+        <!-- if user is an admin -->
+    <% } if (currentUser && admin) { %>
+      <%  if (currentUser.id === admin.id) { %>
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/admin">Admin</a>
+          <a class="nav-item nav-link" href="/addproduct">Add Product</a>
+        </div>
+      <% } %>
+
+
       </div>
         <div>
             <form class= "form-inline login-as" action="/api/users/logout" method="POST">
@@ -21,14 +32,7 @@
             </form>
         </div>
 
-    <!-- if user is an admin -->
-    <% } if (currentUser && admin) { %>
-      <%  if (currentUser.id === admin.id) { %>
-        <div class="navbar-nav">
-          <a class="nav-item nav-link" href="/admin">Admin</a>
-          <a class="nav-item nav-link" href="/addproduct">Add Product</a>
-        </div>
-      <% } %>
+    
 
     <!-- if user is logged out -->
     <% } else { %>
