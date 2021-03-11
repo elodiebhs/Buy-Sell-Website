@@ -73,12 +73,7 @@ app.get("/", (req, res) => {
   .then(data => {
     const currentUser = req.session.user_id
     const templateVars = { products: data.rows, currentUser: currentUser }
-    return templateVars;
-  })
-  .then(data => {
-    // data.currentUser["admin"] = true;
-    console.log("data: ", data);
-    res.render("index", data);
+    res.render("index", templateVars);
   })
   .catch(err => {
     res
