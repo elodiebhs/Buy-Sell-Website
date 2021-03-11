@@ -13,7 +13,6 @@
 </head>
 <body>
 
- 
 
   <main style="margin: 1em;">
     <h3>Add Shoe</h3>
@@ -44,10 +43,10 @@
 
   <div class="row">
     <div class="col">
-      <input name="size" type="number" class="form-control" placeholder="Size">
+      <input name="size" type="number" min="1" class="form-control" placeholder="Size">
     </div>
     <div class="col">
-      <input name="price" type="number" class="form-control" placeholder="Price">
+      <input name="price" type="number" min="1" class="form-control" placeholder="Price">
     </div>
   </div>
 
@@ -55,8 +54,8 @@
     <div class="col">
       <select name="feature">
         <option selected>Featured</option>
-        <option value="1">Yes</option>
-        <option value="2">No</option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
         
       </select>
     </div>

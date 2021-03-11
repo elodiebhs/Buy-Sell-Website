@@ -68,16 +68,10 @@ app.use("/admin", adminRoutes(db));
 // });
 
 app.get("/", (req, res) => {
-
-  // db.query(`SELECT products.user_id, products.title, products.description, products.thumbnail_photo, products.main_photo, products.brand, products.size, products.price, products.feature, products.sold, users.id, users.is_admin FROM products FULL OUTER JOIN users ON users.id = products.user_id;`)
   db.query(`SELECT * FROM users WHERE is_admin = true; SELECT * FROM products;`)
   .then(data => {
-    console.log("data.rows: ", data.rows)
     const currentUser = req.session.user_id;
     const adminData = data.rows[0];
-    console.log("the session user: ", currentUser)
-    console.log("adminData: ", adminData)
-    console.log("matching users? :", currentUser === adminData);
     const templateVars = { products: data.rows, currentUser: currentUser, admin: adminData }
     res.render("index", templateVars);
   })
