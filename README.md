@@ -50,13 +50,20 @@ Users Can:
 
 - users can see featured items on a main feed
 - users can filter items by price,
-- users can favourite items to check up on them later
+- users can favourite items to check up on them later, and access a favourites page
 - users can send email to the admin that is listing the item
 
 Admins can:
 
-- post items, which can be seen by others. Once an item is posted, an alert confirming that the product had been posted is showing up
-- remove items from the site
-- mark items as SOLD!,
+- add/post items, which can be seen by others. Once an item is posted, an alert confirming that the product had been posted is showing up
+- remove/delete items from the site
+- mark items as SOLD!
 - send an email back to the buyer 
+
+Others:
+
+
+- Only admin can login, if not an admin then a message error will show
+- Once admin logged in it's showing login as : ....
+-
 
