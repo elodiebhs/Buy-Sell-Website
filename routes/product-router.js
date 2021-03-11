@@ -28,16 +28,14 @@ module.exports = (db) => {
 
   router.get("/:id", (req, res) => {
     const id = req.params.id;
-    // console.log("id: ", id)
-    // console.log("req.params", req.params)
-    db.query(`SELECT * FROM products WHERE id = $1`, [id])
+    console.log("id: ", id);
+    db.query(`SELECT * FROM users where users.is_admin = true; SELECT * FROM products WHERE id = ${id};`)
     .then(data => {
+      console.log("data.rows: ", data.rows)
       const currentUser = req.session.user_id;
-      const templateVars = { products: data.rows[0], currentUser: currentUser, message: ""}
-      // console.log("templateVars: ", templateVars)
-      // console.log("products.thumbnail_photo: ", products)
-      // console.log("products.id: ", data.rows[0].id)
-      // console.log("templateVars", templateVars)
+      const adminData = data.rows[0];
+      const theProducts = data.rows[1];
+      const templateVars = { products: theProducts, currentUser: currentUser, message: "", admin: adminData };
       res.render("product_id", templateVars);
     })
     .catch(err => {
