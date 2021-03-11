@@ -3,8 +3,20 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/addproduct", (req, res) => {
-    res.render("product_add")
+  db.query(`SELECT * FROM users WHERE is_admin = true;`)
+    .then(data => {
+      const currentUser = req.session.user_id;
+      const adminData = data.rows[0];
+      const templateVars = { currentUser: currentUser, admin: adminData }
+      res.render("product_add", templateVars)
+    })
+    .catch(err => {
+      res
+      .status(500)
+      .json({ error: err.message });
+    });
   });
+
 
   router.post("/addproduct",(req, res) => {
     const title = req.body.title;
@@ -36,7 +48,7 @@ module.exports = (db) => {
         res.status(500)
         res.json({error: err.message});
       });
-      
+
   })
 
 return router;
