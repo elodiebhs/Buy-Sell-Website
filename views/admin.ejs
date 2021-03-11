@@ -41,11 +41,11 @@
                 <button type="submit" class="btn btn-primary">Delete</button>
               </form>
             </td>
-            
+
             <td>
               <form class= "form-inline" action="/admin/sold" method="POST">
-                <input style="background-color: green;" name="product_id" value="<%=product.id%>" type="hidden">
-                <button type="submit" class="btn btn-primary">Sold</button>
+                <input name="product_id" value="<%=product.id%>" type="hidden">
+                <button style="background-color: green;" type="submit" class="btn btn-primary">Sold</button>
               </form>
             </td>
 
