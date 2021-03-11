@@ -60,10 +60,13 @@ module.exports = (db) => {
     db.query(`SELECT * FROM users WHERE email = '${req.body.email}';`)
     .then(data => {
       const user = data.rows[0];
-      // console.log("userstest: ", user);
+      if(user){
       req.session.user_id = user
       // console.log("reqsessionuser: ", user)
       res.redirect("/");
+      } else {
+        res.json({result:"user not found"})
+      }
     })
     .catch(err => {
       res

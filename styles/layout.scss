@@ -8,7 +8,7 @@ $background-texture-5-hex: #F2F2F2;
 
 
 body {
-  background-color: #F2F2F2;
+  background-color: $background-texture-5-hex;
 
   h1 {
     color: #244751;
@@ -21,7 +21,10 @@ body {
 .navbar{
   background-color: #101E26;
 }
-
+.login-as{
+  color: white;
+  font-size: 12px;
+}
 
 /* Index page */
 

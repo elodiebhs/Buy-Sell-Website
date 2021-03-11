@@ -36,6 +36,7 @@ The following steps are only for _one_ of the group members to perform.
   - It runs through each of the files, in order, and executes them against the database. 
   - Note: you will lose all newly created (test) data each time this is run, since the schema files will tend to `DROP` the tables and recreate them.
 
+
 ## Dependencies
 
 - Node 10.x or above
@@ -43,4 +44,29 @@ The following steps are only for _one_ of the group members to perform.
 - PG 6.x
 
 
--- test change
+### Functionality of the Web Site 
+
+Visit `http://localhost:8080/
+
+Users Can:
+
+- users can see featured items on a main feed
+- users can filter items by price,
+- users can favourite items to check up on them later, and access a favourites page
+- users can send email to the admin that is listing the item
+
+Admins can:
+
+- add/post items, which can be seen by others.
+- remove/delete items from the site
+- mark items as SOLD!
+- send an email back to the buyer 
+
+Others:
+
+- Error page if user doesn't exist and try to login
+- Only users can login. If admin, the admin had access to everything, if not an admin, no access to "add Product"
+- Once admin logged in it's showing login as : exemple@exemple.com
+- Once an item is posted, an alert confirming that the product had been posted is showing up
+
+
