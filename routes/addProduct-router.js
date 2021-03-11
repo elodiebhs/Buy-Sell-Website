@@ -18,17 +18,18 @@ module.exports = (db) => {
 
     console.log("req.body", req.body)
 
-    const queryParams = [title, description, thumbnail_photo, main_photo, brand, size, price];
+    const queryParams = [title, description, thumbnail_photo, main_photo, brand, size, price, feature];
 
-    const queryString = `INSERT INTO products (title, description, thumbnail_photo, main_photo, brand, size, price)
-    VALUES ($1, $2, $3, $4 ,$5, $6, $7) RETURNING *;`
+    const queryString = `INSERT INTO products (title, description, thumbnail_photo, main_photo, brand, size, price, feature)
+    VALUES ($1, $2, $3, $4 ,$5, $6, $7, $8) RETURNING *;`
     console.log(queryParams)
 
     db.query(queryString, queryParams)
       .then(data => {
         console.log("data rows", data)
-        const currentUser = req.session.user_id;
+        const currentUser = req.session.user_id
         const templateVars = { products: data.rows[0], currentUser: currentUser, message: "Your product has been added"}
+        console.log("currentUser: ", currentUser)
         res.render("product_id", templateVars);
       })
       .catch(err => {
