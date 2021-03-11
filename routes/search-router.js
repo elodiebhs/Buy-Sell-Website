@@ -18,6 +18,8 @@ module.exports = (db) => {
   //   });
   // });
   // return router;
+
+  
   router.get("/search", (req, res) => {
 
     let queryString = `SELECT * FROM products `;

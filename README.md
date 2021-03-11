@@ -39,14 +39,29 @@ The following steps are only for _one_ of the group members to perform.
 
 ## Dependencies
 
-- Node 10.x or above
-- NPM 5.x or above
-- PG 6.x
+Install all dependencies : npm install
 
+- "body-parser": "^1.19.0",
+- "chalk": "^2.4.2",
+- "cookie-session": "^1.4.0",
+- "dotenv": "^2.0.0",
+- "ejs": "^2.7.4",
+- "express": "^4.17.1",
+- "morgan": "^1.9.1",
+- "node-sass-middleware": "^0.11.0",
+- "nodemailer": "^6.5.0",
+- "pg": "^6.4.2",
+- "pg-native": "^3.0.0"
+
+Run the development web serve : npm start
 
 ### Functionality of the Web Site 
 
-Visit `http://localhost:8080/
+This is a Buy/Sell Listing Website.
+An app where you can put different types of shoes up for sale. This lets buyers find the items they are looking for quickly, and easily contact sellers.
+
+
+Run Shoe App on your browser: `http://localhost:8080/
 
 Users Can:
 
