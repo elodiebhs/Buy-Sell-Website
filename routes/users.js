@@ -33,7 +33,8 @@ module.exports = (db) => {
     db.query(`SELECT * FROM users;`)
     .then(data => {
       const currentUser = req.session.user_id;
-      const templateVars = { currentUser: currentUser }
+      console.log("data.rows from login", data.rows)
+      const templateVars = { currentUser: currentUser, admin: data.rows[0] }
       res.render("login", templateVars);
     })
     .catch(err => {
