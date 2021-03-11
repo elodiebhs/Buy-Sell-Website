@@ -57,7 +57,7 @@ Users Can:
 
 Admins can:
 
-- add/post items, which can be seen by others. Once an item is posted, an alert confirming that the product had been posted is showing up
+- add/post items, which can be seen by others.
 - remove/delete items from the site
 - mark items as SOLD!
 - send an email back to the buyer 
@@ -67,5 +67,6 @@ Others:
 - Error page if user doesn't exist and try to login
 - Only users can login. If admin, the admin had access to everything, if not an admin, no access to "add Product"
 - Once admin logged in it's showing login as : exemple@exemple.com
+- Once an item is posted, an alert confirming that the product had been posted is showing up
 
 
