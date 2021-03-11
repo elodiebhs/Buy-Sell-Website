@@ -28,7 +28,6 @@ module.exports = (db) => {
     .then(data => {
       const userFavourites = data.rows.slice(1);
       const adminData = data.rows[0];
-      console.log("favourites data.rows: ", userFavourites)
       const currentUser = req.session.user_id;
       const templateVars = { products: userFavourites, currentUser: currentUser, admin: adminData }
       res.render("favourites", templateVars);
