@@ -41,6 +41,15 @@ body {
   justify-content: space-around;
   padding-top: 4rem;
   padding-bottom: 4rem;
+  width: 100%;
+
+  .card {
+    width: 33%;
+
+    .card-img-top {
+      height: 100%;
+    }
+  }
 }
 
 .all_shoes {
@@ -49,7 +58,13 @@ body {
   justify-content: space-around;
   flex-wrap:wrap;
   padding-top: 4rem;
-  padding-bottom: 4rem
+  padding-bottom: 4rem;
+  width: 100%;
+
+  .card {
+    width: calc(100% / 4 - 24px);
+    margin: 12px;
+  }
 }
 
 .shoe_image{
@@ -63,7 +78,7 @@ body {
 /* Product page_id */
 .product-id{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
 }
 
@@ -108,3 +123,35 @@ a#fav{
  a#fav.active{
   background: url('../images/addFavourite-hover.png');
  }
+
+
+// Large
+@media only screen and (max-width: 1024px) {
+  .all_shoes {
+    .card {
+      width: calc(100% / 3 - 24px);
+      margin: 12px;
+    }
+  }
+}
+
+// Medium
+@media only screen and (max-width: 751px) {
+  .featured_sneakers{ 
+    .card {
+      .card-img-top {
+        height: auto;
+      }
+    }
+  }
+}
+
+// Mobile
+@media only screen and (max-width: 600px) {
+  .all_shoes {
+    .card {
+      width: 100%;
+      margin: 12px;
+    }
+  }
+}

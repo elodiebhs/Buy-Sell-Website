@@ -56,7 +56,7 @@
   <div class = "featured_sneakers">
     <% for (let product of products) { %>
       <% if(product.feature) { %>
-        <div class="card" style="width: 18rem;">
+        <div class="card">
           <img class="card-img-top" src="<%= product.thumbnail_photo %>" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><%= product.title %></h5>
@@ -75,7 +75,7 @@
   <% for (let product of products) { %>
 
     <% if (!product.sold) { %>
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img class="card-img-top shoe_image" src="<%= product.thumbnail_photo %>" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title" ><%= product.title %></h5>
@@ -88,7 +88,7 @@
 
     <div class="sold_shoes">
       <% if (product.sold) { %>
-        <div class="card" style="width: 18rem;">
+        <div class="card">
           <img class="card-img-top shoe_image" src="<%= product.thumbnail_photo %>" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title" ><%= product.title %></h5>
