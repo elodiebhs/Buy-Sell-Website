@@ -20,7 +20,6 @@ module.exports = (db) => {
       });
     });
       
-
     router.post("/delete", (req, res) => {
       console.log("req.body", req.body)
       const currentUser = req.session.user_id;
@@ -29,6 +28,8 @@ module.exports = (db) => {
       db.query(queryString, [req.body.product_id])
 
       .then(data => {
+        const theProducts = data.rows;
+        // const templateVars = {products: theProducts, currentUser: currentUser, message: "Your product has been deleted"}
         console.log("data.rows", data.rows)
         res.redirect("/admin");
       })

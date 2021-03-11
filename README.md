@@ -46,6 +46,8 @@ The following steps are only for _one_ of the group members to perform.
 
 ### Functionality of the Web Site 
 
+Visit `http://localhost:8080/
+
 Users Can:
 
 - users can see featured items on a main feed
@@ -62,8 +64,8 @@ Admins can:
 
 Others:
 
+- Error page if user doesn't exist and try to login
+- Only users can login. If admin, the admin had access to everything, if not an admin, no access to "add Product"
+- Once admin logged in it's showing login as : exemple@exemple.com
 
-- Only admin can login, if not an admin then a message error will show
-- Once admin logged in it's showing login as : ....
--
 
