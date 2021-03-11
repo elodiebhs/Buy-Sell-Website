@@ -19,13 +19,7 @@
 
   <main style="margin: 2em;">
     <h3>The product you selected</h3>
-    <% if (message) { %>
-      <div class="alert alert-success" role="alert">
-        <%= message %>
-      </div>
 
-    <% }%>
-  
   <div class= "product-id">
     <div class="card" style="width: 30rem;">
       <img class="card-img-top" src="<%= products.thumbnail_photo %>" alt="Card image cap">
@@ -40,11 +34,7 @@
       </ul>
     </div>
 
-
-
-
     <!-- Adding item to favourites -->
-
     <div class="card-body">
       <form class= "form-inline" action="/favourites/new" method="POST">
         <input type="hidden" name="prodID" value="<%= products.id %>" />

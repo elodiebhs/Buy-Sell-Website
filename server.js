@@ -67,24 +67,18 @@ app.use("/admin", adminRoutes(db));
 //   res.render("index");
 // });
 
-// app.get("/", (req, res) => {
-//   db.query(`SELECT * FROM products;`)
-//   .then(data => {
-//     const templateVars = { products: data.rows }
-//     res.render("index", templateVars);
-//   })
-// });
-
 app.get("/", (req, res) => {
 
   db.query(`SELECT * FROM products;`)
   .then(data => {
-    const currentUser = req.session.user_id;
-    // console.log("the session user: ", currentUser)
-    // console.log("user email: ", currentUser)
+    const currentUser = req.session.user_id
     const templateVars = { products: data.rows, currentUser: currentUser }
-    // console.log("templateVars :", templateVars);
-    res.render("index", templateVars);
+    return templateVars;
+  })
+  .then(data => {
+    // data.currentUser["admin"] = true;
+    console.log("data: ", data);
+    res.render("index", data);
   })
   .catch(err => {
     res
