@@ -80,6 +80,24 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+
+  .card {
+    width: 33%;
+    margin: 12px;
+   
+  }
+}
+
+.buttons-product-id{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+  .form-inline{
+    border: 1px solid black;
+    align-items: center;
+  }
 }
 
 
