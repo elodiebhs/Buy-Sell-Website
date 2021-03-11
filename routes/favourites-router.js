@@ -14,10 +14,6 @@ module.exports = (db) => {
     .then(data => {
       const currentUser = req.session.user_id;
       let userFavourites = {};
-      console.log("SECOND currentUser: ", currentUser)
-      console.log("first datarows: ", data.rows)
-      console.log("data.rows.id: ", data.rows.id)
-      console.log("currentUser.id: ", currentUser.id)
 
       for (let key in data.rows) {
         console.log("data.rows: ", data.rows[key].id);
@@ -30,12 +26,8 @@ module.exports = (db) => {
     })
     db.query(`SELECT * FROM products JOIN favourites ON product_id = products.id WHERE favourites.user_id = ${req.session.user_id.id};`)
     .then(data => {
-      // console.log("userFavourites: ", data.rows)
       const userFavourites = data.rows;
       const currentUser = req.session.user_id;
-      // console.log("THIRD currentUser: ", currentUser)
-      // console.log("last favorites: ", userFavourites)
-      // console.log("last favorites2: ", userFavourites.thumbnail_photo)
       const templateVars = { products: userFavourites, currentUser: currentUser }
       res.render("favourites", templateVars);
     })
@@ -49,17 +41,12 @@ module.exports = (db) => {
   router.post("/new", (req, res) => {
     const currentUser = req.session.user_id;
     const currentProduct = req.body.prodID;
-    // console.log("req.session", req.session)
-    // console.log("currentuser", currentUser)
-    // console.log("hello")
-    console.log("currentUser.id", currentUser.id)
-    console.log("req.body.prodID: ", currentProduct);
-    // db.query(`SELECT * FROM products;`)
+    // console.log("currentUser.id", currentUser.id)
+    // console.log("req.body.prodID: ", currentProduct);
     db.query(`INSERT INTO favourites (user_id, product_id)
     VALUES (${currentUser.id}, ${currentProduct})
     RETURNING *;`)
     .then(data => {
-      // alert("Successfully added item to favourites!");
       // console.log("data.rows", data.rows)
       res.redirect("/favourites")
     })
@@ -71,16 +58,15 @@ module.exports = (db) => {
   });
 
 
-  router.post("/new", (req, res) => {
-    const currentUser = req.session.user_id;
-    console.log("req.params.id: ", req.params.id);
-    console.log("currentuser", currentUser)
-    console.log("hello")
-    console.log("document.cookie: ", this.req)
-    db.query(`SELECT * FROM users;`)
+  router.post("/delete", (req, res) => {
+    const queryString = `DELETE FROM favourites WHERE product_id = $1;`
+    console.log("req.body.product_id: ", req.body.product_id);
+
+
+    db.query(queryString, [req.body.product_id])
     .then(data => {
-      console.log("data.rows", data.rows)
-      res.redirect("/");
+      console.log("hello!!!")
+      res.redirect("/favourites");
     })
     .catch(err => {
       res
