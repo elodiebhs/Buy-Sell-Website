@@ -18,9 +18,6 @@
   <%- include('_header'); %>
 
   <main style="margin: 2em;">
-    <h3 class="title-product-id">The product you selected</h3>
-
-
     <!-- Message if item is added -->
     <% if (message) { %>
       <div class="alert alert-secondary" role="alert">
@@ -36,6 +33,7 @@
       <img class="card-img-top" src="<%= products.thumbnail_photo %>" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title"><%= products.title %></h5>
+        <label>Description</label>
         <p class="card-text"><%= products.description %></p>
       </div>
       <ul class="list-group list-group-flush">
@@ -56,9 +54,6 @@
 
       </form>
     </div>
-<!-- 
-    <a href="#" id="fav" title="[+] Add as favorite">&nbsp;</a> -->
-
 
 <!-- Contact Form -->
     <div class="form-group">
