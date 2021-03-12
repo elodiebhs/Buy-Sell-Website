@@ -35,10 +35,10 @@ Others:
 
 ## Images of our pages
 
-- Login Page
+# Login Page
 !["Screenshot of Login Page"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/login.png)
 
-- Main Page
+# Main Page
 !["Screenshot of Main Page"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/main_1.png)
 
 - Main Page
