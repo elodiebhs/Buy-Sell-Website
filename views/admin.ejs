@@ -35,7 +35,7 @@
         <% for(let product of products) { %>
           <tr>
             <td> <img src= <%= product.thumbnail_photo %> width="200" height="200" > </td>
-            <td><%= product.title %></td>
+            <td><a href="/products/<%= product.id %> "><%= product.title %></a></td>
             <td>
               <form class= "form-inline" action="/admin/delete" method="POST">
                 <input name="product_id" value="<%=product.id%>" type="hidden">
@@ -49,7 +49,7 @@
                 <% if (!product.sold) { %>
                   <button style="background-color: green;" type="submit" class="btn btn-primary">Sold</button>
                 <% } %>
-                
+
               </form>
             </td>
 
