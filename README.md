@@ -38,20 +38,28 @@ Others:
 - Login Page
 !["Screenshot of Login Page"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/login.png)
 
+- Main Page
 !["Screenshot of Main Page"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/main_1.png)
 
+-Main Page
 !["Screenshot of Main Page_2"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/main_2.png)
 
+-Main Page
 !["Screenshot of Main Page_3"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/main_3.png)
 
+-Login as Admin
 !["Screenshot of Login as Admin"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/Admin%20access.png)
 
+-Login as not an Admin
 !["Screenshot of Login as not Admin"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/not%20admin.png)
 
+-Favourites
 !["Screenshot of Favourites"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/my_favourites.png)
 
+-Admin
 !["Screenshot of Admin "](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/Admin_page.png)
 
+-Add products
 !["Screenshot of Add products "](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/Add_products.png)
 
 
