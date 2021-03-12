@@ -47,10 +47,10 @@ Others:
 ### Products on Main Page
 !["Screenshot of Main Page_3"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/main_3.png)
 
-### Login as Admin
+### Header (Admin)
 !["Screenshot of Login as Admin"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/Admin%20access.png)
 
-### Login as not an Admin
+### Header (User)
 !["Screenshot of Login as not Admin"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/not%20admin.png)
 
 ### Favourites
