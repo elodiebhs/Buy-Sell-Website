@@ -85,6 +85,7 @@ Others:
 - Once a user logged in, the email@ is appearing in the header.
 - Once a new item is posted by the admin, an alert confirming that the product has been posted is showing up.
 - By clicking on logout, the user can logout.
+- we added a customize logo in the head of the page
 
 
 #### Images of our pages
