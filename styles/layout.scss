@@ -164,7 +164,18 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 
+  .card-body {
+    padding-top: 0;
+  }
+  .sold-banner {
+    padding: 5px 10px;
+    margin-bottom: 45px;
+    text-align: center;
+  }
 }
 
 .buttons-product-id{
@@ -208,19 +219,30 @@ body {
 
 /*search page*/
 
+.search-title {
+  text-align: center;
+  margin: 50px 0;
+}
+
 .search-form{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-.shoe-filter{
+.shoe-filter {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   flex-wrap:wrap;
   padding-top: 4rem;
-  padding-bottom: 4rem
+  padding-bottom: 4rem;
+  width: 100%;
+  text-align: center;
+
+  .card {
+    width: calc(100% / 4 - 24px);
+    margin: 12px;
+  }
 }
 
 /*fave page*/
@@ -259,6 +281,13 @@ a#fav{
     }
   }
 
+  .shoe-filter {
+    .card {
+      width: calc(100% / 3 - 24px);
+      margin: 12px;
+    }
+  }
+
   .featured_sneakers {
     .card {
       width: calc(100% / 3 - 24px);
@@ -286,6 +315,13 @@ a#fav{
 // Mobile
 @media only screen and (max-width: 600px) {
   .all_shoes {
+    .card {
+      width: calc(100% - 24px);
+      margin: 12px;
+    }
+  }
+
+  .shoe-filter {
     .card {
       width: calc(100% - 24px);
       margin: 12px;

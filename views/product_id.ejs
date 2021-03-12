@@ -32,6 +32,9 @@
     <div class="card">
       <img class="card-img-top" src="<%= products.thumbnail_photo %>" alt="Card image cap">
       <div class="card-body">
+        <% if (products.sold) { %>
+          <div class="sold-banner">SOLD</div>
+        <% } %>
         <h5 class="card-title"><%= products.title %></h5>
         <label>Description</label>
         <p class="card-text"><%= products.description %></p>
