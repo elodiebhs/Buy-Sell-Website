@@ -11,7 +11,7 @@
 <!-- Scripts -->
 <script src="/scripts/app.js"></script>
 
-  <title>Product_id</title>
+  <title><%= products.title %></title>
 </head>
 <body>
 
@@ -28,7 +28,7 @@
       </div>
 
     <% }%>
-  
+
     <!--Product_id -->
 
   <div class= "product-id">
@@ -50,20 +50,14 @@
     <div class="add-to-favourites">
       <form class= "form-inline" action="/favourites/new" method="POST">
         <input type="hidden" name="prodID" value="<%= products.id %>" />
-
-
         <button id="fav" type="submit" class="btn btn-outline-dark"> Add to favourites</button>
-
       </form>
     </div>
-<!-- 
-    <a href="#" id="fav" title="[+] Add as favorite">&nbsp;</a> -->
-
 
 <!-- Contact Form -->
     <div class="form-group">
       <form class="form-inline" action="/products/contact" method="POST">
-        <button type="submit" class="btn btn-outline-dark" ><a href="mailto:someone@example.com">Contact Seller</a></button>
+        <button type="submit" class="btn btn-outline-dark" ><a href="mailto:devinsanders@gmail.com?subject=Product Inquiry on Light Kicks&body=Hi there, I saw your listing on Light Kicks and I'd like to know if this item is still available">Contact Seller</a></button>
       </form>
     </div>
 
