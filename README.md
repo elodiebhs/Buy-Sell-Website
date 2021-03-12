@@ -83,5 +83,6 @@ Others:
 - Only users can login. If admin, the admin had access to everything, if not an admin, no access to "add Product"
 - Once admin logged in it's showing login as : exemple@exemple.com
 - Once an item is posted, an alert confirming that the product had been posted is showing up
+- If user is not an admin, they will not be able to access the admin or add product pages (Unauthorized message will appear)
 
 

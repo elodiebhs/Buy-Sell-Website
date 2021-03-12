@@ -57,13 +57,11 @@ module.exports = (db) => {
 
   // POSTS -------------------------------------------------------------------------
   router.post('/login', (req, res) => {
-    console.log(req.body);
     db.query(`SELECT * FROM users WHERE email = '${req.body.email}';`)
     .then(data => {
       const user = data.rows[0];
-      if(user){
+      if (user) {
       req.session.user_id = user
-      // console.log("reqsessionuser: ", user)
       res.redirect("/");
       } else {
         res.json({result:"Sorry, you are not a user"})

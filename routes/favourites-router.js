@@ -2,24 +2,21 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
+
   // User Favourites List
   router.get("/", (req, res) => {
-    // redirect to user to login if not logged in
     const currentUser = req.session.user_id;
     if (currentUser === undefined) {
       res.redirect("/api/users/login");
     }
-    // database query if logged in
     db.query(`SELECT * FROM favourites;`)
     .then(data => {
       const currentUser = req.session.user_id;
+      // Adding user favourites to new object
       let userFavourites = {};
-
       for (let key in data.rows) {
-        console.log("data.rows: ", data.rows[key].id);
         if (data.rows[key].id === currentUser.id) {
-          userFavourites[key] = data.rows[key]; // adding user favourites to object list
-          console.log("userFavourites loop: ", userFavourites)
+          userFavourites[key] = data.rows[key];
         }
       }
       return userFavourites;
@@ -39,16 +36,14 @@ module.exports = (db) => {
     });
   });
 
+  // Add item to favourites list on product page
   router.post("/new", (req, res) => {
     const currentUser = req.session.user_id;
     const currentProduct = req.body.prodID;
-    // console.log("currentUser.id", currentUser.id)
-    // console.log("req.body.prodID: ", currentProduct);
     db.query(`INSERT INTO favourites (user_id, product_id)
     VALUES (${currentUser.id}, ${currentProduct})
     RETURNING *;`)
     .then(data => {
-      // console.log("data.rows", data.rows)
       res.redirect("/favourites")
     })
     .catch(err => {
@@ -58,15 +53,11 @@ module.exports = (db) => {
     });
   });
 
-
+  // Deleting item from favourites list on favourites page
   router.post("/delete", (req, res) => {
     const queryString = `DELETE FROM favourites WHERE product_id = $1;`
-    console.log("req.body.product_id: ", req.body.product_id);
-
-
     db.query(queryString, [req.body.product_id])
     .then(data => {
-      console.log("hello!!!")
       res.redirect("/favourites");
     })
     .catch(err => {

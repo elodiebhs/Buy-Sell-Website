@@ -1,5 +1,3 @@
-
-
 INSERT INTO products( user_id, title, description, thumbnail_photo, main_photo, brand,
 size, price, feature)
 VALUES

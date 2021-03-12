@@ -3,35 +3,33 @@ const router  = express.Router();
 
 
 module.exports = (db) => {
-//user admin see all products
-  router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users WHERE is_admin = true; SELECT * FROM products;`)
+
+    // Admin page to edit or delete current listings
+    router.get("/", (req, res) => {
+      db.query(`SELECT * FROM users WHERE is_admin = true; SELECT * FROM products;`)
       .then(data => {
         const currentUser = req.session.user_id;
         const adminData = data.rows[0];
         const theProducts = data.rows.slice(1);
-        const templateVars = { products: theProducts, currentUser: currentUser, admin: adminData};
-        // console.log("products", templateVars)
+        const templateVars = { products: theProducts, currentUser: currentUser, admin: adminData };
+        console.log("currentuser: ", templateVars.currentUser)
+        if (!templateVars.currentUser) {
+          res.json({result:"Unauthorized Access"})
+          }
         res.render("admin", templateVars);
-      })
+        })
       .catch(err => {
         res
           .status(500)
           .json({ error: err.message });
       });
     });
-      
+
+    // Delete listing in admin page
     router.post("/delete", (req, res) => {
-      console.log("req.body", req.body)
-      const currentUser = req.session.user_id;
-      
       const queryString = `DELETE FROM products WHERE products.id = $1;`
       db.query(queryString, [req.body.product_id])
-
       .then(data => {
-        const theProducts = data.rows;
-        // const templateVars = {products: theProducts, currentUser: currentUser, message: "Your product has been deleted"}
-        console.log("data.rows", data.rows)
         res.redirect("/admin");
       })
       .catch(err => {
@@ -41,13 +39,10 @@ module.exports = (db) => {
       });
     });
 
+    // Mark items as sold in admin page
     router.post("/sold", (req, res) => {
-      console.log("req.body", req.body)
-      const currentUser = req.session.user_id;
-      
       const queryString = `UPDATE products SET sold = true WHERE products.id = $1;`
       db.query(queryString, [req.body.product_id])
-
       .then(data => {
         console.log("data.rows", data.rows)
         res.redirect("/admin");
@@ -58,7 +53,6 @@ module.exports = (db) => {
         .json({ error: err.message });
       });
     });
-  
+
     return router;
   };
-  
