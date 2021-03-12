@@ -4,7 +4,7 @@ $background-texture-1-hex: #011140;
 $background-texture-2-hex:#011126;
 $background-texture-3-hex: #101E26;
 $background-texture-4-hex: #94A1A6;
-$background-texture-5-hex: #F2F2F2;
+$background-texture-5-hex: #FFF;
 
 
 body {
@@ -28,13 +28,65 @@ body {
 
 /* Index page */
 
-.carousel-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding-top: 3rem;
-  padding-bottom: 3rem
+.jumbotron-fluid {
+  padding: 1rem 2rem;
 }
+
+.jumbotron-container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.jumbotron-container_image {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 12px;
+
+  @media(max-width: 768px) {
+    width: 100%;
+  }
+
+  img {
+    width: 70%;
+  }
+}
+
+.jumbotron-container_content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 12px;
+  
+  .display-4 {
+    margin-bottom: 10px;
+  }
+
+  .lead {
+    margin-bottom: 45px;
+  }
+
+  @media(max-width: 768px) {
+    width: 75%;
+    align-items: center;
+  }
+}
+
+.search-button {
+  width: 40%;
+  background: transparent;
+  color: black;
+  border: solid 1px black;
+}
+
 .featured_sneakers{
   display: flex;
   flex-direction: row;
@@ -42,6 +94,7 @@ body {
   padding-top: 4rem;
   padding-bottom: 4rem;
   width: 100%;
+  flex-wrap: wrap;
 
   .card {
     width: 33%;
@@ -155,8 +208,8 @@ a#fav{
 
 @media only screen and (min-width: 1024px) {
   .btn{
-  min-width: 168px;
- }
+    min-width: 168px;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -174,7 +227,7 @@ a#fav{
 }
 
 // Medium
-@media only screen and (max-width: 751px) {
+@media only screen and (max-width: 768px) {
   .featured_sneakers{ 
     .card {
       .card-img-top {
