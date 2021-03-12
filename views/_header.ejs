@@ -2,10 +2,7 @@
 
 <header>
   <nav class="navbar navbar-expand-md navbar-dark">
-    <a class="navbar-brand" href="/">FindYourShoe</a>
-    <button class="navbar-toggler" type="button" >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="/">Light Kicks</a>
 
     <!-- if user is logged in -->
     <% if (currentUser) { %>
@@ -27,8 +24,8 @@
       </div>
         <div>
             <form class= "form-inline login-as" action="/api/users/logout" method="POST">
-            <div style="margin-right: 7px;"> Logged in as <%= currentUser.email %></div>
-              <button type="submit" class="btn btn-primary">logout</button>
+            <div style="margin-right: 7px;"><%= currentUser.email %></div>
+              <button type="submit" class="header-btn">Logout</button>
             </form>
         </div>
 

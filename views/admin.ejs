@@ -46,7 +46,10 @@
             <td>
               <form class= "form-inline" action="/admin/sold" method="POST">
                 <input name="product_id" value="<%=product.id%>" type="hidden">
-                <button style="background-color: green;" type="submit" class="btn btn-primary">Sold</button>
+                <% if (!product.sold) { %>
+                  <button style="background-color: green;" type="submit" class="btn btn-primary">Sold</button>
+                <% } %>
+                
               </form>
             </td>
 
