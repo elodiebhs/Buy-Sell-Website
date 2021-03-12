@@ -3,11 +3,12 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/addproduct", (req, res) => {
-  db.query(`SELECT * FROM users WHERE is_admin = true;`)
+  db.query(`SELECT * FROM users WHERE is_admin = true; SELECT * FROM products;`)
     .then(data => {
       const currentUser = req.session.user_id;
       const adminData = data.rows[0];
-      const templateVars = { currentUser: currentUser, admin: adminData }
+      const theProducts = data.rows.slice(1);
+      const templateVars = { products: theProducts, currentUser: currentUser, admin: adminData }
       res.render("product_add", templateVars)
     })
     .catch(err => {
@@ -38,9 +39,9 @@ module.exports = (db) => {
 
     db.query(queryString, queryParams)
       .then(data => {
-        console.log("data rows", data)
         const currentUser = req.session.user_id
-        const templateVars = { products: data.rows[0], currentUser: currentUser, message: "Your product has been added"}
+        const theProducts = data.rows[0];
+        const templateVars = { products: theProducts, currentUser: currentUser, admin: undefined, message: "Your product has been added", }
         console.log("currentUser: ", currentUser)
         res.render("product_id", templateVars);
       })
@@ -48,7 +49,6 @@ module.exports = (db) => {
         res.status(500)
         res.json({error: err.message});
       });
-
   })
 
 return router;
