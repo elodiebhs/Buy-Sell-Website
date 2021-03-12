@@ -4,9 +4,6 @@ Light Kicks Website
 This is a Buy/Sell Listing Website.
 An app where you can put different types of shoes up for sale. This lets buyers find the items they are looking for quickly, and easily contact sellers.
 
-
-Run Shoe App on your browser: http://localhost:8080/
-
 Users Can:
 
 - users can see featured items on a main feed
@@ -97,5 +94,6 @@ Install all dependencies : npm install
 - "pg": "^6.4.2",
 - "pg-native": "^3.0.0"
 
-Run the development web serve : npm start
+Run the development web server : npm start
+Run the app on your browser: http://localhost:8080/
 
