@@ -33,7 +33,7 @@ Others:
 
 
 ## Screenshots
-=========
+
 #### Main Page
 !["Screenshot of Main Page"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/main_1.png)
 
@@ -64,7 +64,7 @@ Others:
 #### Header (User)
 !["Screenshot of Login as not Admin"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/not%20admin.png)
 
-=========
+
 
 ### Getting Started
 
