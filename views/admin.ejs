@@ -16,6 +16,9 @@
 
   <%- include('_header'); %>
 
+  <% if (currentUser && admin) { %>
+    <%  if (currentUser.id === admin.id) { %>
+
   <main style="margin: 1em;">
     <h3>Admin</h3>
 
@@ -51,6 +54,8 @@
         <% } %>
       </tbody>
     </table>
+    <% } %>
+    <% } %>
 
 
 

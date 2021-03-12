@@ -1,31 +1,9 @@
-/*
- * All routes for Users are defined here
- * Since this file is loaded in server.js into api/users,
- *   these routes are mounted onto /users
- * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
- */
-
 const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
 
-  router.get("/", (req, res) => {
-    db.query(`SELECT * FROM products;`)
-      .then(data => {
-        const products = data.rows;
-        res.json({ products });
-      })
-      .catch(err => {
-        res
-          .status(500)
-          .json({ error: err.message });
-      });
-  });
-
-
-  // Product ID
-
+  // Product page
   router.get("/:id", (req, res) => {
     const id = req.params.id;
     console.log("id: ", id);
@@ -45,11 +23,10 @@ module.exports = (db) => {
     });
   });
 
+  // Send message to seller on product page
   router.post("/contact", (req, res) => {
-    // console.log("req.body", req.body)
     db.query(`SELECT * FROM users;`)
     .then(data => {
-      // console.log("data.rows", data.rows)
       res.redirect("/");
     })
     .catch(err => {

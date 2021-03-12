@@ -15,10 +15,13 @@
 
   <%- include('_header'); %>
 
+  <% if (currentUser && admin) { %>
+  <%  if (currentUser.id === admin.id) { %>
+
   <main style="margin: 1em;">
     <h3>Add Shoe</h3>
 <div class= "add-shoe-form">
-  
+
 <!-- Form Starts -->
 <form method="POST" action="/addproduct">
   <div class="form-group">
@@ -68,6 +71,9 @@
 </form>
 
 </div>
+
+<% } %>
+<% } %>
 
  <!-- Bootstrap JS -->
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
