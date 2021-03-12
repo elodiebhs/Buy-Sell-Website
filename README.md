@@ -41,7 +41,7 @@ Others:
 ### Main Page
 !["Screenshot of Main Page"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/main_1.png)
 
-### Featured on Main Page
+### Featured Products on Main Page
 !["Screenshot of Main Page_2"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/main_2.png)
 
 ### Products on Main Page
