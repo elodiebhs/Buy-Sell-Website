@@ -78,11 +78,21 @@ Admins can:
 - send an email back to the buyer 
 
 Others:
+- If a user try to access the http://localhost:8080/admin, or http://localhost:8080/addproduct, without being logged in, an error message will appear: "Unauthorized Access". 
+- If a user doesn't exist in our database and try to login, an error meassage will show : "sorry you are not a user".
+- Only users from our database can login. 
+- If the user is also an admin, the admin has access to "My favourites", "Admin" and "Add product". If the user is not an admin, the "Admin" and "Add product" sections won't show in the header.
+- Once a user logged in, the email@ is appearing in the header.
+- Once a new item is posted by the admin, an alert confirming that the product has been posted is showing up.
+- By clicking on logout, the user can logout.
 
-- Error page if user doesn't exist and try to login
-- Only users can login. If admin, the admin had access to everything, if not an admin, no access to "add Product"
-- Once admin logged in it's showing login as : exemple@exemple.com
-- Once an item is posted, an alert confirming that the product had been posted is showing up
-- If user is not an admin, they will not be able to access the admin or add product pages (Unauthorized message will appear)
 
+#### Images of our pages
 
+- Login Page
+- Main page
+- Logged in as an admin 
+- Logged in as none admin
+- My Favourites
+- Admin 
+- Add product

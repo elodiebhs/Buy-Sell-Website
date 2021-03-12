@@ -29,7 +29,7 @@
       <tbody>
         <% for(let product of products) { %>
           <tr>
-            <td> <img src= <%= product.thumbnail_photo %> width="200" height="200" > </td>
+            <td> <img width="120" height="120" src= <%= product.thumbnail_photo %>> </td>
             <td><%= product.title %></td>
             <td><p style="background-color: transparent;" type= "button" class="btn btn-primary"><a href="/products/<%= product.product_id %>"> See product</a></p></td>
 

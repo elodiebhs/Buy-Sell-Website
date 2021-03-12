@@ -13,7 +13,7 @@ module.exports = (db) => {
       const templateVars = { products: theProducts, currentUser: currentUser, admin: adminData }
       if (!templateVars.currentUser) {
         res.json({result:"Unauthorized Access"})
-        }
+      }
       res.render("product_add", templateVars)
     })
     .catch(err => {

@@ -13,7 +13,7 @@
 <body>
   <%- include('_header'); %>
   <main style="margin: 1em;">
-    <h3>Search for a product</h3>
+    <h3 class="search-title">Search for a product</h3>
 
     <div class= "search-form">
   <form method="GET" action="/search">
@@ -34,9 +34,11 @@
 
   <div class="shoe-filter">
   <% for (let product of products) { %>
-    <% if (!product.sold) { %>
-    <div class="card" style="width: 18rem;">
+    <div class="card">
       <img class="card-img-top shoe_image" src="<%= product.thumbnail_photo %>" alt="Card image cap">
+      <% if (product.sold) { %>
+        <div class="sold-banner">SOLD</div>
+      <% } %>
       <div class="card-body">
         <h5 class="card-title" ><%= product.title %></h5>
         <p class="card-text"><%= product.description %></p>
@@ -44,23 +46,6 @@
         <a href="http://localhost:8080/products/<%=product.id%>" class="btn btn-dark">See Product</a>
       </div>
     </div>
-
-    <% } %>
-
-    <% if (product.sold) { %>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top shoe_image" src="<%= product.thumbnail_photo %>" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title" ><%= product.title %></h5>
-          <p class="card-text"><%= product.description %></p>
-          <p class="card-text"> $<%= product.price%></p>
-          <a href="http://localhost:8080/products/<%=product.id%>" class="btn btn-dark">See Product</a>
-        </div>
-
-        <p>SOLD</p>
-      </div>
-    <% } %>
-
   <% } %>
 </div>
  
