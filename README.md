@@ -1,6 +1,5 @@
-LHL Node Skeleton
+Light Kicks Website
 =========
-# Functionality of the Web Site 
 
 This is a Buy/Sell Listing Website.
 An app where you can put different types of shoes up for sale. This lets buyers find the items they are looking for quickly, and easily contact sellers.
@@ -33,35 +32,39 @@ Others:
 - we added a customize logo in the head of the page
 
 
-## Images of our pages
-
-### Login Page
-!["Screenshot of Login Page"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/login.png)
-
-### Main Page
+## Screenshots
+=========
+#### Main Page
 !["Screenshot of Main Page"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/main_1.png)
 
-### Featured Products on Main Page
+#### Featured Products on Main Page
 !["Screenshot of Main Page_2"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/main_2.png)
 
-### Products on Main Page
+#### Products on Main Page
 !["Screenshot of Main Page_3"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/main_3.png)
 
-### Header (Admin)
-!["Screenshot of Login as Admin"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/Admin%20access.png)
+#### Product Page
+!["Screenshot of Product Page"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/product_id.png)
 
-### Header (User)
-!["Screenshot of Login as not Admin"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/not%20admin.png)
-
-### Favourites
+#### Favourites
 !["Screenshot of Favourites"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/my_favourites.png)
 
-### Admin
+#### Admin
 !["Screenshot of Admin "](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/Admin_page.png)
 
-### Add Products
+#### Add Products
 !["Screenshot of Add products "](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/Add_products.png)
 
+#### Login Page
+!["Screenshot of Login Page"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/login.png)
+
+#### Header (Admin)
+!["Screenshot of Login as Admin"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/Admin%20access.png)
+
+#### Header (User)
+!["Screenshot of Login as not Admin"](https://github.com/elodiebhs/Buy-Sell-Website/blob/master/docs/not%20admin.png)
+
+=========
 
 ### Getting Started
 
