@@ -43,6 +43,9 @@
       <% if(product.feature) { %>
         <div class="card">
           <img class="card-img-top" src="<%= product.thumbnail_photo %>" alt="Card image cap">
+            <% if (product.sold) { %>
+              <div class="sold-banner">SOLD</div>
+            <% } %>
           <div class="card-body">
             <h5 class="card-title"><%= product.title %></h5>
             <p class="card-text"><%= product.description %></p>
@@ -73,9 +76,8 @@
     </div>
 
   <% } %>
-</div>
 
-</div>
+
 
 
  <!-- Bootstrap JS -->

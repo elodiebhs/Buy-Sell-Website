@@ -19,56 +19,56 @@
   <%  if (currentUser.id === admin.id) { %>
 
   <main style="margin: 1em;">
-    <h3>Add Shoe</h3>
-<div class= "add-shoe-form">
+    <h3 class="addshoe-title">Add Shoe</h3>
+  <div class= "add-shoe-form-container">
 
 <!-- Form Starts -->
-<form method="POST" action="/addproduct">
-  <div class="form-group">
-    <input name="title" placeholder="Shoe Name" class="form-control" rows="3"></input>
-  </div>
-
-  <div class="form-group">
-    <textarea name="description" placeholder="Description" class="form-control" rows="3"></textarea>
-  </div>
-
-  <div class="form-group">
-    <label>Add a thumbnail photo URL</label>
-    <input name="thumbnail_photo" type="text" class="form-control-file">
-  </div>
-
-  <div class="form-group">
-    <label>Add a main photo URL</label>
-    <input name="main_photo" type="text" class="form-control-file">
-  </div>
-
-  <div class="form-group">
-    <input name="brand" placeholder="Brand" class="form-control"></input>
-  </div>
-
-  <div class="row">
-    <div class="col">
-      <input name="size" type="number" min="1" class="form-control" placeholder="Size">
+  <form class="add-shoe-form" method="POST" action="/addproduct">
+    <div class="form-group">
+      <input name="title" placeholder="Shoe Name" class="form-control" rows="3"></input>
     </div>
-    <div class="col">
-      <input name="price" type="number" min="1" class="form-control" placeholder="Price">
+
+    <div class="form-group">
+      <textarea name="description" placeholder="Description" class="form-control" rows="3"></textarea>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col">
-      <select name="feature">
-        <option selected>Featured</option>
-        <option value="true">Yes</option>
-        <option value="false">No</option>
-
-      </select>
+    <div class="form-group">
+      <label>Add a thumbnail photo URL</label>
+      <input name="thumbnail_photo" type="text" class="form-control-file">
     </div>
-  </div>
+
+    <div class="form-group">
+      <label>Add a main photo URL</label>
+      <input name="main_photo" type="text" class="form-control-file">
+    </div>
+
+    <div class="form-group">
+      <input name="brand" placeholder="Brand" class="form-control"></input>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <input name="size" type="number" min="1" class="form-control" placeholder="Size">
+      </div>
+      <div class="col">
+        <input name="price" type="number" min="1" class="form-control" placeholder="Price">
+      </div>
+    </div>
+
+    <div class="row featured-row">
+
+        <select name="feature">
+          <option selected>Featured</option>
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+
+        </select>
+ 
+    </div>
 
 
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+    <button type="submit" class="btn btn-primary btn-add-shoe">Submit</button>
+  </form>
 
 </div>
 
