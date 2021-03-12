@@ -17,7 +17,6 @@
   <main style="margin: 1em;">
     <h3>Your Favourites</h3>
 
-
     <table class="table">
       <thead>
         <tr>
@@ -33,7 +32,6 @@
             <td> <img src= <%= product.thumbnail_photo %> width="200" height="200" > </td>
             <td><%= product.title %></td>
             <td><p style="background-color: white;" type= "button" class="btn btn-primary"><a href="/products/<%= product.product_id %>"> See product</a></p></td>
-
             <td><form method="POST" action="/favourites/delete">
               <input name="product_id" value="<%=product.product_id%>" type="hidden">
               <button type="submit" class="btn btn-outline-danger" name="deleteButton">
