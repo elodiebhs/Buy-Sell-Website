@@ -6,7 +6,7 @@ This is a Buy/Sell Listing Website.
 An app where you can put different types of shoes up for sale. This lets buyers find the items they are looking for quickly, and easily contact sellers.
 
 
-Run Shoe App on your browser: `http://localhost:8080/
+Run Shoe App on your browser: http://localhost:8080/
 
 Users Can:
 
