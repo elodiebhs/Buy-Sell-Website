@@ -95,11 +95,18 @@ body {
     justify-content: center;
     
   .form-inline{
-    border: 1px solid black;
     align-items: center;
   }
-}
 
+  a{
+    color: black;
+  }
+
+  a:hover {
+    color: white;
+  }
+  
+}
 
 /* Product add shoe */
 
@@ -144,12 +151,25 @@ a#fav{
 
 
 // Large
+
+
+@media only screen and (min-width: 1024px) {
+  .btn{
+  min-width: 168px;
+ }
+}
+
 @media only screen and (max-width: 1024px) {
   .all_shoes {
     .card {
       width: calc(100% / 3 - 24px);
       margin: 12px;
     }
+  }
+
+  .btn{
+    font-size: 12px;
+    min-width: 100px;
   }
 }
 
