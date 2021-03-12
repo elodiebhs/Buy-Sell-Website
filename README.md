@@ -86,6 +86,7 @@ Others:
 - Once a new item is posted by the admin, an alert confirming that the product has been posted is showing up.
 - By clicking on logout, the user can logout.
 - we added a customize logo in the head of the page
+- Our app has a responsive design
 
 
 #### Images of our pages
