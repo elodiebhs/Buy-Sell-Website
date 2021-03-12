@@ -42,7 +42,7 @@ module.exports = (db) => {
     .then(data => {
       const currentUser = req.session.user_id
       const theProducts = data.rows[0];
-      const templateVars = { products: theProducts, currentUser: currentUser, admin: undefined, message: "Your product has been added", }
+      const templateVars = { products: theProducts, currentUser: currentUser, admin: undefined, message: "Your product has been added" }
       res.render("product_id", templateVars);
     })
     .catch(err => {
