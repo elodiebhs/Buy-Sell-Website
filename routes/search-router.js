@@ -22,7 +22,7 @@ module.exports = (db) => {
   
   router.get("/search", (req, res) => {
 
-    let queryString = `SELECT * FROM products `;
+    let queryString = `SELECT * FROM users WHERE is_admin = true; SELECT * FROM products `;
 
     if(req.query.minPrice && req.query.maxPrice) {
       queryString += `WHERE price >= ${req.query.minPrice} AND price <= ${req.query.maxPrice}; `;
@@ -37,8 +37,10 @@ module.exports = (db) => {
     db.query(queryString)
     .then(data => {
       const currentUser = req.session.user_id;
+      const adminData = data.rows[0];
+      const theProducts = data.rows.slice(1);
       console.log("data rows: ", data.rows);
-      const templateVars = { products: data.rows, currentUser: currentUser }
+      const templateVars = { products: theProducts, currentUser: currentUser, admin: adminData }
       res.render("search", templateVars)
     })
     .catch(err => {
